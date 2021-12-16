@@ -3,10 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0240FF01B54ACFCA09266404 /* Pods_widgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98844D31FE0D2A59455DF47 /* Pods_widgetExtension.framework */; };
+		16BD92BBF8E56D0016FB97B4 /* Pods_PAPAY_SwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0DD9FB22184596F0D7E042 /* Pods_PAPAY_SwiftTests.framework */; };
+		4919A400274502A700C794DF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919A3FF274502A700C794DF /* HomeView.swift */; };
+		4919A4022745044100C794DF /* iPadHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919A4012745044100C794DF /* iPadHomeView.swift */; };
+		4919A40427450C4A00C794DF /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919A40327450C4A00C794DF /* ItemListView.swift */; };
+		491A7C0F2743A9D500C41C2C /* transaction-model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A7C0E2743A9D500C41C2C /* transaction-model.swift */; };
+		491A7C102743A9D500C41C2C /* transaction-model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A7C0E2743A9D500C41C2C /* transaction-model.swift */; };
+		4930519126F345C40057BFED /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930519026F345C40057BFED /* FirstView.swift */; };
+		4930519326F4826B0057BFED /* FirstDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930519226F4826B0057BFED /* FirstDetailView.swift */; };
+		4933355926DE38E500F30AD8 /* connect-model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933355826DE38E500F30AD8 /* connect-model.swift */; };
+		4933355A26DE38E500F30AD8 /* connect-model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933355826DE38E500F30AD8 /* connect-model.swift */; };
 		49393C4C265E455300903192 /* PAPAY_SwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49393C4B265E455300903192 /* PAPAY_SwiftApp.swift */; };
 		49393C4E265E455300903192 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49393C4D265E455300903192 /* ContentView.swift */; };
 		49393C50265E455400903192 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49393C4F265E455400903192 /* Assets.xcassets */; };
@@ -15,6 +26,28 @@
 		49393C58265E455400903192 /* PAPAY_Swift.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 49393C56265E455400903192 /* PAPAY_Swift.xcdatamodeld */; };
 		49393C63265E455400903192 /* PAPAY_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49393C62265E455400903192 /* PAPAY_SwiftTests.swift */; };
 		49393C6E265E455400903192 /* PAPAY_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49393C6D265E455400903192 /* PAPAY_SwiftUITests.swift */; };
+		49393C82265E467200903192 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49393C81265E467200903192 /* WidgetKit.framework */; };
+		49393C84265E467200903192 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49393C83265E467200903192 /* SwiftUI.framework */; };
+		49393C87265E467200903192 /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49393C86265E467200903192 /* widget.swift */; };
+		49393C8A265E467300903192 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49393C89265E467300903192 /* Assets.xcassets */; };
+		49393C8C265E467300903192 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 49393C88265E467200903192 /* widget.intentdefinition */; };
+		49393C8D265E467300903192 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 49393C88265E467200903192 /* widget.intentdefinition */; };
+		49393C90265E467300903192 /* widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49393C7F265E467200903192 /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		49512C0126F0442000EE07AF /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49512C0026F0442000EE07AF /* AppConfig.swift */; };
+		49512C0226F0442000EE07AF /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49512C0026F0442000EE07AF /* AppConfig.swift */; };
+		496EA808274F2E7F00B6F208 /* DigitDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496EA807274F2E7F00B6F208 /* DigitDisplayView.swift */; };
+		496EA80A274F314D00B6F208 /* calculate-model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496EA809274F314D00B6F208 /* calculate-model.swift */; };
+		499E05E62742548D00010CDB /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E05E52742548D00010CDB /* ViewRouter.swift */; };
+		499E05E827426C6300010CDB /* SettingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E05E727426C6300010CDB /* SettingDetailsView.swift */; };
+		49A7D945274604A9004CC429 /* keypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7D944274604A9004CC429 /* keypadView.swift */; };
+		49C97E792759F6CC00373591 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C97E7B2759F6CC00373591 /* Launch Screen.storyboard */; };
+		49D1640526FDCD0E00169409 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1640426FDCD0E00169409 /* SettingsView.swift */; };
+		49D1640726FDCD4000169409 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1640626FDCD4000169409 /* TransactionsView.swift */; };
+		49D1640A2701C30F00169409 /* ui-model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D164092701C30F00169409 /* ui-model.swift */; };
+		49D1640B2701C31300169409 /* ui-model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D164092701C30F00169409 /* ui-model.swift */; };
+		49FCD5932733CF17008535ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49FCD5922733CF17008535ED /* GoogleService-Info.plist */; };
+		586973E04483B41CFD15EBA2 /* Pods_PAPAY_Swift_PAPAY_SwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D48C2CE64D1286EF535F4 /* Pods_PAPAY_Swift_PAPAY_SwiftUITests.framework */; };
+		6BD2839340F06A625601986A /* Pods_PAPAY_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0F4A48837D1E01606E2153 /* Pods_PAPAY_Swift.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,9 +65,41 @@
 			remoteGlobalIDString = 49393C47265E455300903192;
 			remoteInfo = "PAPAY-Swift";
 		};
+		49393C8E265E467300903192 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49393C40265E455300903192 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49393C7E265E467200903192;
+			remoteInfo = widgetExtension;
+		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		49393C94265E467300903192 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				49393C90265E467300903192 /* widgetExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		1A7CE323CDDAAD7EF7C32E7D /* Pods-PAPAY-Swift-PAPAY-SwiftUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PAPAY-Swift-PAPAY-SwiftUITests.debug.xcconfig"; path = "Target Support Files/Pods-PAPAY-Swift-PAPAY-SwiftUITests/Pods-PAPAY-Swift-PAPAY-SwiftUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		1B0F4A48837D1E01606E2153 /* Pods_PAPAY_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PAPAY_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		241452C861E857B206670BE2 /* Pods-widgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-widgetExtension.release.xcconfig"; path = "Target Support Files/Pods-widgetExtension/Pods-widgetExtension.release.xcconfig"; sourceTree = "<group>"; };
+		3F8CC3E6209C7EB9161A04CA /* Pods-PAPAY-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PAPAY-Swift.debug.xcconfig"; path = "Target Support Files/Pods-PAPAY-Swift/Pods-PAPAY-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		4919A3FF274502A700C794DF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4919A4012745044100C794DF /* iPadHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadHomeView.swift; sourceTree = "<group>"; };
+		4919A40327450C4A00C794DF /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		491A7C0E2743A9D500C41C2C /* transaction-model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "transaction-model.swift"; sourceTree = "<group>"; };
+		4930519026F345C40057BFED /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
+		4930519226F4826B0057BFED /* FirstDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDetailView.swift; sourceTree = "<group>"; };
+		4933355826DE38E500F30AD8 /* connect-model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "connect-model.swift"; sourceTree = "<group>"; };
 		49393C48265E455300903192 /* PAPAY-Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PAPAY-Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49393C4B265E455300903192 /* PAPAY_SwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAPAY_SwiftApp.swift; sourceTree = "<group>"; };
 		49393C4D265E455300903192 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -49,6 +114,33 @@
 		49393C69265E455400903192 /* PAPAY-SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PAPAY-SwiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		49393C6D265E455400903192 /* PAPAY_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PAPAY_SwiftUITests.swift; sourceTree = "<group>"; };
 		49393C6F265E455400903192 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49393C7F265E467200903192 /* widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		49393C81265E467200903192 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		49393C83265E467200903192 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		49393C86265E467200903192 /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
+		49393C88265E467200903192 /* widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = widget.intentdefinition; sourceTree = "<group>"; };
+		49393C89265E467300903192 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		49393C8B265E467300903192 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		494EBDAE26F872D800672770 /* PAPAY-Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PAPAY-Swift.entitlements"; sourceTree = "<group>"; };
+		49512C0026F0442000EE07AF /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		496EA807274F2E7F00B6F208 /* DigitDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitDisplayView.swift; sourceTree = "<group>"; };
+		496EA809274F314D00B6F208 /* calculate-model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "calculate-model.swift"; sourceTree = "<group>"; };
+		499E05E52742548D00010CDB /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
+		499E05E727426C6300010CDB /* SettingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailsView.swift; sourceTree = "<group>"; };
+		49A7D944274604A9004CC429 /* keypadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keypadView.swift; sourceTree = "<group>"; };
+		49C97E7C2759F6D100373591 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
+		49D1640426FDCD0E00169409 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		49D1640626FDCD4000169409 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
+		49D164092701C30F00169409 /* ui-model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ui-model.swift"; sourceTree = "<group>"; };
+		49FCD5922733CF17008535ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4A0DD9FB22184596F0D7E042 /* Pods_PAPAY_SwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PAPAY_SwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		65A2EFFD25009A645755C461 /* Pods-widgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-widgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-widgetExtension/Pods-widgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		6BE99D02F2E23D16FA00317A /* Pods-PAPAY-SwiftTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PAPAY-SwiftTests.release.xcconfig"; path = "Target Support Files/Pods-PAPAY-SwiftTests/Pods-PAPAY-SwiftTests.release.xcconfig"; sourceTree = "<group>"; };
+		CA73DBD88F9027C80B69872F /* Pods-PAPAY-Swift-PAPAY-SwiftUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PAPAY-Swift-PAPAY-SwiftUITests.release.xcconfig"; path = "Target Support Files/Pods-PAPAY-Swift-PAPAY-SwiftUITests/Pods-PAPAY-Swift-PAPAY-SwiftUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D98844D31FE0D2A59455DF47 /* Pods_widgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_widgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E59BECC4DA08AAC5FC3484F2 /* Pods-PAPAY-SwiftTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PAPAY-SwiftTests.debug.xcconfig"; path = "Target Support Files/Pods-PAPAY-SwiftTests/Pods-PAPAY-SwiftTests.debug.xcconfig"; sourceTree = "<group>"; };
+		F19D48C2CE64D1286EF535F4 /* Pods_PAPAY_Swift_PAPAY_SwiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PAPAY_Swift_PAPAY_SwiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6F1EE6DC1C7BF450B2C1BB8 /* Pods-PAPAY-Swift.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PAPAY-Swift.release.xcconfig"; path = "Target Support Files/Pods-PAPAY-Swift/Pods-PAPAY-Swift.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BD2839340F06A625601986A /* Pods_PAPAY_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16BD92BBF8E56D0016FB97B4 /* Pods_PAPAY_SwiftTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,19 +164,61 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				586973E04483B41CFD15EBA2 /* Pods_PAPAY_Swift_PAPAY_SwiftUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		49393C7C265E467200903192 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49393C84265E467200903192 /* SwiftUI.framework in Frameworks */,
+				49393C82265E467200903192 /* WidgetKit.framework in Frameworks */,
+				0240FF01B54ACFCA09266404 /* Pods_widgetExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2DBEA5EC0323942A9E5E2807 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3F8CC3E6209C7EB9161A04CA /* Pods-PAPAY-Swift.debug.xcconfig */,
+				F6F1EE6DC1C7BF450B2C1BB8 /* Pods-PAPAY-Swift.release.xcconfig */,
+				1A7CE323CDDAAD7EF7C32E7D /* Pods-PAPAY-Swift-PAPAY-SwiftUITests.debug.xcconfig */,
+				CA73DBD88F9027C80B69872F /* Pods-PAPAY-Swift-PAPAY-SwiftUITests.release.xcconfig */,
+				E59BECC4DA08AAC5FC3484F2 /* Pods-PAPAY-SwiftTests.debug.xcconfig */,
+				6BE99D02F2E23D16FA00317A /* Pods-PAPAY-SwiftTests.release.xcconfig */,
+				65A2EFFD25009A645755C461 /* Pods-widgetExtension.debug.xcconfig */,
+				241452C861E857B206670BE2 /* Pods-widgetExtension.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4933355726DE388800F30AD8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				49D164092701C30F00169409 /* ui-model.swift */,
+				4933355826DE38E500F30AD8 /* connect-model.swift */,
+				491A7C0E2743A9D500C41C2C /* transaction-model.swift */,
+				496EA809274F314D00B6F208 /* calculate-model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		49393C3F265E455300903192 = {
 			isa = PBXGroup;
 			children = (
+				49512C0326F0442700EE07AF /* Config */,
+				4933355726DE388800F30AD8 /* Model */,
 				49393C4A265E455300903192 /* PAPAY-Swift */,
 				49393C61265E455400903192 /* PAPAY-SwiftTests */,
 				49393C6C265E455400903192 /* PAPAY-SwiftUITests */,
+				49393C85265E467200903192 /* widget */,
+				49393C80265E467200903192 /* Frameworks */,
 				49393C49265E455300903192 /* Products */,
+				2DBEA5EC0323942A9E5E2807 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +228,7 @@
 				49393C48265E455300903192 /* PAPAY-Swift.app */,
 				49393C5E265E455400903192 /* PAPAY-SwiftTests.xctest */,
 				49393C69265E455400903192 /* PAPAY-SwiftUITests.xctest */,
+				49393C7F265E467200903192 /* widgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -99,8 +236,22 @@
 		49393C4A265E455300903192 /* PAPAY-Swift */ = {
 			isa = PBXGroup;
 			children = (
+				49FCD5922733CF17008535ED /* GoogleService-Info.plist */,
+				494EBDAE26F872D800672770 /* PAPAY-Swift.entitlements */,
+				49C97E7B2759F6CC00373591 /* Launch Screen.storyboard */,
 				49393C4B265E455300903192 /* PAPAY_SwiftApp.swift */,
 				49393C4D265E455300903192 /* ContentView.swift */,
+				499E05E52742548D00010CDB /* ViewRouter.swift */,
+				4919A3FF274502A700C794DF /* HomeView.swift */,
+				4919A4012745044100C794DF /* iPadHomeView.swift */,
+				49A7D944274604A9004CC429 /* keypadView.swift */,
+				496EA807274F2E7F00B6F208 /* DigitDisplayView.swift */,
+				4919A40327450C4A00C794DF /* ItemListView.swift */,
+				49D1640426FDCD0E00169409 /* SettingsView.swift */,
+				499E05E727426C6300010CDB /* SettingDetailsView.swift */,
+				49D1640626FDCD4000169409 /* TransactionsView.swift */,
+				4930519026F345C40057BFED /* FirstView.swift */,
+				4930519226F4826B0057BFED /* FirstDetailView.swift */,
 				49393C4F265E455400903192 /* Assets.xcassets */,
 				49393C54265E455400903192 /* Persistence.swift */,
 				49393C59265E455400903192 /* Info.plist */,
@@ -136,6 +287,38 @@
 			path = "PAPAY-SwiftUITests";
 			sourceTree = "<group>";
 		};
+		49393C80265E467200903192 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				49393C81265E467200903192 /* WidgetKit.framework */,
+				49393C83265E467200903192 /* SwiftUI.framework */,
+				1B0F4A48837D1E01606E2153 /* Pods_PAPAY_Swift.framework */,
+				F19D48C2CE64D1286EF535F4 /* Pods_PAPAY_Swift_PAPAY_SwiftUITests.framework */,
+				4A0DD9FB22184596F0D7E042 /* Pods_PAPAY_SwiftTests.framework */,
+				D98844D31FE0D2A59455DF47 /* Pods_widgetExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		49393C85265E467200903192 /* widget */ = {
+			isa = PBXGroup;
+			children = (
+				49393C86265E467200903192 /* widget.swift */,
+				49393C88265E467200903192 /* widget.intentdefinition */,
+				49393C89265E467300903192 /* Assets.xcassets */,
+				49393C8B265E467300903192 /* Info.plist */,
+			);
+			path = widget;
+			sourceTree = "<group>";
+		};
+		49512C0326F0442700EE07AF /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				49512C0026F0442000EE07AF /* AppConfig.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,13 +326,17 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49393C72265E455400903192 /* Build configuration list for PBXNativeTarget "PAPAY-Swift" */;
 			buildPhases = (
+				E0944F71A7B028ACAC6FC9DF /* [CP] Check Pods Manifest.lock */,
 				49393C44265E455300903192 /* Sources */,
 				49393C45265E455300903192 /* Frameworks */,
 				49393C46265E455300903192 /* Resources */,
+				49393C94265E467300903192 /* Embed App Extensions */,
+				9D215D6DBDF3AEEB3F3EAEB3 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				49393C8F265E467300903192 /* PBXTargetDependency */,
 			);
 			name = "PAPAY-Swift";
 			productName = "PAPAY-Swift";
@@ -160,6 +347,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49393C75265E455400903192 /* Build configuration list for PBXNativeTarget "PAPAY-SwiftTests" */;
 			buildPhases = (
+				9CEFC6EC90ECAFA79DC3B84B /* [CP] Check Pods Manifest.lock */,
 				49393C5A265E455400903192 /* Sources */,
 				49393C5B265E455400903192 /* Frameworks */,
 				49393C5C265E455400903192 /* Resources */,
@@ -178,9 +366,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49393C78265E455400903192 /* Build configuration list for PBXNativeTarget "PAPAY-SwiftUITests" */;
 			buildPhases = (
+				9B11CADA788214BA04D044FC /* [CP] Check Pods Manifest.lock */,
 				49393C65265E455400903192 /* Sources */,
 				49393C66265E455400903192 /* Frameworks */,
 				49393C67265E455400903192 /* Resources */,
+				4E8A3FC83365680DFC65AFEC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -191,6 +381,24 @@
 			productName = "PAPAY-SwiftUITests";
 			productReference = 49393C69265E455400903192 /* PAPAY-SwiftUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		49393C7E265E467200903192 /* widgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49393C91265E467300903192 /* Build configuration list for PBXNativeTarget "widgetExtension" */;
+			buildPhases = (
+				A8E837C8136E995F075B6D24 /* [CP] Check Pods Manifest.lock */,
+				49393C7B265E467200903192 /* Sources */,
+				49393C7C265E467200903192 /* Frameworks */,
+				49393C7D265E467200903192 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = widgetExtension;
+			productName = widgetExtension;
+			productReference = 49393C7F265E467200903192 /* widgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -212,6 +420,9 @@
 						CreatedOnToolsVersion = 12.5;
 						TestTargetID = 49393C47265E455300903192;
 					};
+					49393C7E265E467200903192 = {
+						CreatedOnToolsVersion = 12.5;
+					};
 				};
 			};
 			buildConfigurationList = 49393C43265E455300903192 /* Build configuration list for PBXProject "PAPAY-Swift" */;
@@ -230,6 +441,7 @@
 				49393C47265E455300903192 /* PAPAY-Swift */,
 				49393C5D265E455400903192 /* PAPAY-SwiftTests */,
 				49393C68265E455400903192 /* PAPAY-SwiftUITests */,
+				49393C7E265E467200903192 /* widgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -241,6 +453,8 @@
 			files = (
 				49393C53265E455400903192 /* Preview Assets.xcassets in Resources */,
 				49393C50265E455400903192 /* Assets.xcassets in Resources */,
+				49C97E792759F6CC00373591 /* Launch Screen.storyboard in Resources */,
+				49FCD5932733CF17008535ED /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,17 +472,167 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49393C7D265E467200903192 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49393C8A265E467300903192 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4E8A3FC83365680DFC65AFEC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PAPAY-Swift-PAPAY-SwiftUITests/Pods-PAPAY-Swift-PAPAY-SwiftUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PAPAY-Swift-PAPAY-SwiftUITests/Pods-PAPAY-Swift-PAPAY-SwiftUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PAPAY-Swift-PAPAY-SwiftUITests/Pods-PAPAY-Swift-PAPAY-SwiftUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B11CADA788214BA04D044FC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PAPAY-Swift-PAPAY-SwiftUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9CEFC6EC90ECAFA79DC3B84B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PAPAY-SwiftTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9D215D6DBDF3AEEB3F3EAEB3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PAPAY-Swift/Pods-PAPAY-Swift-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PAPAY-Swift/Pods-PAPAY-Swift-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PAPAY-Swift/Pods-PAPAY-Swift-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A8E837C8136E995F075B6D24 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-widgetExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E0944F71A7B028ACAC6FC9DF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PAPAY-Swift-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		49393C44265E455300903192 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4933355926DE38E500F30AD8 /* connect-model.swift in Sources */,
+				49512C0126F0442000EE07AF /* AppConfig.swift in Sources */,
 				49393C55265E455400903192 /* Persistence.swift in Sources */,
+				496EA80A274F314D00B6F208 /* calculate-model.swift in Sources */,
+				499E05E62742548D00010CDB /* ViewRouter.swift in Sources */,
+				49A7D945274604A9004CC429 /* keypadView.swift in Sources */,
+				49393C8D265E467300903192 /* widget.intentdefinition in Sources */,
+				499E05E827426C6300010CDB /* SettingDetailsView.swift in Sources */,
+				496EA808274F2E7F00B6F208 /* DigitDisplayView.swift in Sources */,
 				49393C4E265E455300903192 /* ContentView.swift in Sources */,
+				4919A4022745044100C794DF /* iPadHomeView.swift in Sources */,
+				49D1640726FDCD4000169409 /* TransactionsView.swift in Sources */,
 				49393C4C265E455300903192 /* PAPAY_SwiftApp.swift in Sources */,
+				491A7C0F2743A9D500C41C2C /* transaction-model.swift in Sources */,
+				4930519326F4826B0057BFED /* FirstDetailView.swift in Sources */,
+				4930519126F345C40057BFED /* FirstView.swift in Sources */,
+				4919A40427450C4A00C794DF /* ItemListView.swift in Sources */,
+				49D1640A2701C30F00169409 /* ui-model.swift in Sources */,
+				4919A400274502A700C794DF /* HomeView.swift in Sources */,
 				49393C58265E455400903192 /* PAPAY_Swift.xcdatamodeld in Sources */,
+				49D1640526FDCD0E00169409 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +652,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		49393C7B265E467200903192 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				491A7C102743A9D500C41C2C /* transaction-model.swift in Sources */,
+				49D1640B2701C31300169409 /* ui-model.swift in Sources */,
+				4933355A26DE38E500F30AD8 /* connect-model.swift in Sources */,
+				49512C0226F0442000EE07AF /* AppConfig.swift in Sources */,
+				49393C8C265E467300903192 /* widget.intentdefinition in Sources */,
+				49393C87265E467200903192 /* widget.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -301,7 +678,23 @@
 			target = 49393C47265E455300903192 /* PAPAY-Swift */;
 			targetProxy = 49393C6A265E455400903192 /* PBXContainerItemProxy */;
 		};
+		49393C8F265E467300903192 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49393C7E265E467200903192 /* widgetExtension */;
+			targetProxy = 49393C8E265E467300903192 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		49C97E7B2759F6CC00373591 /* Launch Screen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49C97E7C2759F6D100373591 /* Base */,
+			);
+			name = "Launch Screen.storyboard";
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		49393C70265E455400903192 /* Debug */ = {
@@ -422,9 +815,12 @@
 		};
 		49393C73265E455400903192 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3F8CC3E6209C7EB9161A04CA /* Pods-PAPAY-Swift.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "PAPAY-Swift/PAPAY-Swift.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PAPAY-Swift/Preview Content\"";
 				DEVELOPMENT_TEAM = LQ32KV5FC4;
@@ -444,9 +840,12 @@
 		};
 		49393C74265E455400903192 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F6F1EE6DC1C7BF450B2C1BB8 /* Pods-PAPAY-Swift.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "PAPAY-Swift/PAPAY-Swift.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"PAPAY-Swift/Preview Content\"";
 				DEVELOPMENT_TEAM = LQ32KV5FC4;
@@ -466,6 +865,7 @@
 		};
 		49393C76265E455400903192 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E59BECC4DA08AAC5FC3484F2 /* Pods-PAPAY-SwiftTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,6 +888,7 @@
 		};
 		49393C77265E455400903192 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6BE99D02F2E23D16FA00317A /* Pods-PAPAY-SwiftTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +911,7 @@
 		};
 		49393C79265E455400903192 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A7CE323CDDAAD7EF7C32E7D /* Pods-PAPAY-Swift-PAPAY-SwiftUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -530,6 +932,7 @@
 		};
 		49393C7A265E455400903192 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CA73DBD88F9027C80B69872F /* Pods-PAPAY-Swift-PAPAY-SwiftUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -545,6 +948,50 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = "PAPAY-Swift";
+			};
+			name = Release;
+		};
+		49393C92265E467300903192 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65A2EFFD25009A645755C461 /* Pods-widgetExtension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LQ32KV5FC4;
+				INFOPLIST_FILE = widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paymentasia.PAPAY-Swift.widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		49393C93265E467300903192 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 241452C861E857B206670BE2 /* Pods-widgetExtension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = LQ32KV5FC4;
+				INFOPLIST_FILE = widget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.paymentasia.PAPAY-Swift.widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -583,6 +1030,15 @@
 			buildConfigurations = (
 				49393C79265E455400903192 /* Debug */,
 				49393C7A265E455400903192 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49393C91265E467300903192 /* Build configuration list for PBXNativeTarget "widgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49393C92265E467300903192 /* Debug */,
+				49393C93265E467300903192 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
