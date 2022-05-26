@@ -10,16 +10,16 @@ import SwiftUI
 struct HomeView: View {
     
     var body: some View {
-        let _model = ConnectModel(url: PAPAYConfig().production_url, endpoint: PAPAYConfig().login_ep, token: "98765r6dtghud83", secret: "86t6ygyufeiehfuhfe")
+        let _model = ConnectModel(url: PAPAYConfig().production_url, endpoint: PAPAYConfig().login_ep, token: "98765r6dtghud83", secret: "86t6ygyufeiehfuhfe", mid: "2018-PAPAY", tid: "1061", password: "demo1234")
         Image(uiImage: generateQRCode(from: _model.getinfo()))
             .resizable()
             .scaledToFit()
             .aspectRatio(contentMode: .fit)
             .frame(width: 50, height: 50)
         
-        
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+//        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
+//    var login = ConnectModel()
     private func generateQRCode(from string: String) -> UIImage {
         let context = CIContext()
         let filter  =   CIFilter.qrCodeGenerator()

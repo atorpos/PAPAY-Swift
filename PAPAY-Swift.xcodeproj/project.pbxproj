@@ -33,10 +33,14 @@
 		49393C8C265E467300903192 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 49393C88265E467200903192 /* widget.intentdefinition */; };
 		49393C8D265E467300903192 /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 49393C88265E467200903192 /* widget.intentdefinition */; };
 		49393C90265E467300903192 /* widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49393C7F265E467200903192 /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		493AAC5C27E41F5E00DC0C2E /* pa-connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AAC5B27E41F5E00DC0C2E /* pa-connect.swift */; };
+		493AAC5D27E41F5E00DC0C2E /* pa-connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AAC5B27E41F5E00DC0C2E /* pa-connect.swift */; };
+		494394F32823DDF00000A55C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494394F22823DDF00000A55C /* LoginView.swift */; };
 		49512C0126F0442000EE07AF /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49512C0026F0442000EE07AF /* AppConfig.swift */; };
 		49512C0226F0442000EE07AF /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49512C0026F0442000EE07AF /* AppConfig.swift */; };
 		496EA808274F2E7F00B6F208 /* DigitDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496EA807274F2E7F00B6F208 /* DigitDisplayView.swift */; };
 		496EA80A274F314D00B6F208 /* calculate-model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496EA809274F314D00B6F208 /* calculate-model.swift */; };
+		496FAAA12832399E00705581 /* papay-connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FAAA02832399E00705581 /* papay-connect.swift */; };
 		499E05E62742548D00010CDB /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E05E52742548D00010CDB /* ViewRouter.swift */; };
 		499E05E827426C6300010CDB /* SettingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E05E727426C6300010CDB /* SettingDetailsView.swift */; };
 		49A7D945274604A9004CC429 /* keypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7D944274604A9004CC429 /* keypadView.swift */; };
@@ -121,10 +125,13 @@
 		49393C88265E467200903192 /* widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = widget.intentdefinition; sourceTree = "<group>"; };
 		49393C89265E467300903192 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49393C8B265E467300903192 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		493AAC5B27E41F5E00DC0C2E /* pa-connect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "pa-connect.swift"; sourceTree = "<group>"; };
+		494394F22823DDF00000A55C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		494EBDAE26F872D800672770 /* PAPAY-Swift.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PAPAY-Swift.entitlements"; sourceTree = "<group>"; };
 		49512C0026F0442000EE07AF /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		496EA807274F2E7F00B6F208 /* DigitDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitDisplayView.swift; sourceTree = "<group>"; };
 		496EA809274F314D00B6F208 /* calculate-model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "calculate-model.swift"; sourceTree = "<group>"; };
+		496FAAA02832399E00705581 /* papay-connect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "papay-connect.swift"; sourceTree = "<group>"; };
 		499E05E52742548D00010CDB /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		499E05E727426C6300010CDB /* SettingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailsView.swift; sourceTree = "<group>"; };
 		49A7D944274604A9004CC429 /* keypadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keypadView.swift; sourceTree = "<group>"; };
@@ -201,6 +208,8 @@
 			children = (
 				49D164092701C30F00169409 /* ui-model.swift */,
 				4933355826DE38E500F30AD8 /* connect-model.swift */,
+				496FAAA02832399E00705581 /* papay-connect.swift */,
+				493AAC5B27E41F5E00DC0C2E /* pa-connect.swift */,
 				491A7C0E2743A9D500C41C2C /* transaction-model.swift */,
 				496EA809274F314D00B6F208 /* calculate-model.swift */,
 			);
@@ -241,6 +250,7 @@
 				49C97E7B2759F6CC00373591 /* Launch Screen.storyboard */,
 				49393C4B265E455300903192 /* PAPAY_SwiftApp.swift */,
 				49393C4D265E455300903192 /* ContentView.swift */,
+				494394F22823DDF00000A55C /* LoginView.swift */,
 				499E05E52742548D00010CDB /* ViewRouter.swift */,
 				4919A3FF274502A700C794DF /* HomeView.swift */,
 				4919A4012745044100C794DF /* iPadHomeView.swift */,
@@ -612,15 +622,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				496FAAA12832399E00705581 /* papay-connect.swift in Sources */,
 				4933355926DE38E500F30AD8 /* connect-model.swift in Sources */,
 				49512C0126F0442000EE07AF /* AppConfig.swift in Sources */,
 				49393C55265E455400903192 /* Persistence.swift in Sources */,
 				496EA80A274F314D00B6F208 /* calculate-model.swift in Sources */,
+				494394F32823DDF00000A55C /* LoginView.swift in Sources */,
 				499E05E62742548D00010CDB /* ViewRouter.swift in Sources */,
 				49A7D945274604A9004CC429 /* keypadView.swift in Sources */,
 				49393C8D265E467300903192 /* widget.intentdefinition in Sources */,
 				499E05E827426C6300010CDB /* SettingDetailsView.swift in Sources */,
 				496EA808274F2E7F00B6F208 /* DigitDisplayView.swift in Sources */,
+				493AAC5C27E41F5E00DC0C2E /* pa-connect.swift in Sources */,
 				49393C4E265E455300903192 /* ContentView.swift in Sources */,
 				4919A4022745044100C794DF /* iPadHomeView.swift in Sources */,
 				49D1640726FDCD4000169409 /* TransactionsView.swift in Sources */,
@@ -657,6 +670,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				491A7C102743A9D500C41C2C /* transaction-model.swift in Sources */,
+				493AAC5D27E41F5E00DC0C2E /* pa-connect.swift in Sources */,
 				49D1640B2701C31300169409 /* ui-model.swift in Sources */,
 				4933355A26DE38E500F30AD8 /* connect-model.swift in Sources */,
 				49512C0226F0442000EE07AF /* AppConfig.swift in Sources */,
@@ -748,7 +762,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.6;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -803,7 +817,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.6;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -826,7 +840,7 @@
 				DEVELOPMENT_TEAM = LQ32KV5FC4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "PAPAY-Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -851,7 +865,7 @@
 				DEVELOPMENT_TEAM = LQ32KV5FC4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "PAPAY-Swift/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

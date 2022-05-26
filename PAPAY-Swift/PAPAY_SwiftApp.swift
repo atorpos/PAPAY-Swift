@@ -26,9 +26,9 @@ struct PAPAY_SwiftApp: App {
     var body: some Scene {
         WindowGroup {
 //            HomeView(viewRouter:viewRouter)
-            
-            if (UserDefaults.standard.string(forKey: "token") != nil) {
-                ContentView(viewRouter: viewRouter)
+            if (UserDefaults.standard.string(forKey: "token") == nil) {
+                LoginView(viewRouter: viewRouter)
+//                ContentView(viewRouter: viewRouter)
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
             } else {
                 ContentView(viewRouter: viewRouter)

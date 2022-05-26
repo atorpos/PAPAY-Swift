@@ -18,6 +18,17 @@ struct SettingsView: View {
             }
             .listStyle(.plain)
             .navigationTitle("Settings")
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button(action: {
+                    }) {
+                        Text("Logout")
+                        Image(systemName: "power.circle")
+                            .scaledToFit()
+                        
+                    }
+                }
+            }
         }
         
     }

@@ -56,15 +56,15 @@ struct ContentView: View {
                             .offset(y: -geometry.size.height/6)
                     }
                     HStack{
-                        TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: geometry.size.width/5, height: geometry.size.height/28, systemIconName: "house", tabName: "Home")
-                        TabBarIcon(viewRouter: viewRouter, assignedPage: .reports, width: geometry.size.width/5, height: geometry.size.height/28, systemIconName: "newspaper", tabName: "Report")
+                        TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: geometry.size.width/5, height: geometry.size.height/28, systemIconName: "house.fill", tabName: "Home")
+                        TabBarIcon(viewRouter: viewRouter, assignedPage: .reports, width: geometry.size.width/5, height: geometry.size.height/28, systemIconName: "newspaper.fill", tabName: "Report")
                         if UIDevice.current.userInterfaceIdiom == .phone {
                             ZStack {
                                 Circle()
                                     .foregroundColor(.white)
                                     .frame(width: geometry.size.width/7, height: geometry.size.width/7)
                                     .shadow(radius: 4)
-                                Image(systemName: "plus.circle.fill")
+                                Image(systemName: "iphone.circle.fill")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width: geometry.size.width/7-6 , height: geometry.size.width/7-6)
@@ -79,8 +79,8 @@ struct ContentView: View {
                                 }
                         }
                         
-                        TabBarIcon(viewRouter: viewRouter, assignedPage: .transactions, width: geometry.size.width/5, height: geometry.size.height/28, systemIconName: "wallet.pass", tabName: "Transactions")
-                        TabBarIcon(viewRouter: viewRouter, assignedPage: .settings, width: geometry.size.width/5, height: geometry.size.height/28, systemIconName: "gear", tabName: "Settings")
+                        TabBarIcon(viewRouter: viewRouter, assignedPage: .transactions, width: geometry.size.width/5, height: geometry.size.height/28, systemIconName: "wallet.pass.fill", tabName: "Transactions")
+                        TabBarIcon(viewRouter: viewRouter, assignedPage: .settings, width: geometry.size.width/5, height: geometry.size.height/28, systemIconName: "gearshape.fill", tabName: "Settings")
                     }
                         .frame(width: geometry.size.width, height: geometry.size.height/8)
                     .background(Color("TabBarBackground").shadow(radius: 2))

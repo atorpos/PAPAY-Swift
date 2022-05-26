@@ -13,6 +13,9 @@ public struct ConnectModel {
     var token: String
     var secret: String
     var req_response: String?
+    var mid: String
+    var tid: String
+    var password: String
     
     func getinfo() -> String {
         let date = Date()
@@ -22,10 +25,11 @@ public struct ConnectModel {
 //        let ran_number = Int.random(in: 100000..<99999999)
         
         let parameters: [String : Any] = [
-            "merchant_id":"2018-PAPAY",
-            "terminal_id": 1091,
-            "password": "demo1234"
+            "merchant_id":mid,
+            "terminal_id": tid,
+            "password": password
         ]
+        print(parameters)
         
         var connect_url: String
         
@@ -38,7 +42,7 @@ public struct ConnectModel {
             connect_url =   url+endpoint
             end_point_result = login_connect(url: connect_url, token: "1349348394839834", secret: "93783437643763473", post_data: parameters)
         }
-        
+//        print(end_point_result)
         
         return String(end_point_result)
 //        return String(end_point_result+" "+String(ran_number))
@@ -71,6 +75,7 @@ public struct ConnectModel {
         
         let postString = ConnectModel.getPostString(params: post_data)
         var return_var: String!
+        var token: String
         let sem = DispatchSemaphore.init(value: 0)
         guard let live_url = URL(string: url) else {
             return "error"
@@ -98,9 +103,17 @@ public struct ConnectModel {
         sem.wait()
         
         let mixuptext   =   ConnectModel.convertToDictionary(text: return_var)
-        let payload:[String:Any] = mixuptext?["payload"] as! [String : Any]
-        let token: String = (payload["token"] as? String)!
-        UserDefaults.standard.set(token, forKey: "token")
+        let api_response:[String:Any]    =   mixuptext?["response"] as! [String: Any]
+        let response_code: String = api_response["code"]  as Any as! String
+        print(UserDefaults.standard.string(forKey: "token") ?? "nil")
+        print("code \(response_code)")
+        if(Int(response_code) != 200){
+            token = "hijjnevvee134433"
+        } else {
+            let payload:[String:Any] = mixuptext?["payload"] as! [String : Any]
+            token = (payload["token"] as? String)!
+            UserDefaults.standard.set(token, forKey: "token")
+        }
         
         return token
     }
@@ -156,8 +169,6 @@ public struct ConnectModel {
         return return_val
     }
 }
-
-
 
 struct ConnectModel2 {
     

@@ -26,3 +26,5 @@ class GetSafeView: UIView {
 //    let topPadding  = mainwindow?.safeAreaInsets.top
 //    let bottomPadding = mainwindow?.safeAreaInsets.bottom
 }
+
+
