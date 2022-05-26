@@ -14,21 +14,16 @@ import UserNotifications
 @main
 struct PAPAY_SwiftApp: App {
     let persistenceController = PersistenceController.shared
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
-//    @StateObject var notificationCenter = NotificationCenter()
-//    init () {
-//        FirebaseApp.configure()
-//    }
     @StateObject var viewRouter = ViewRouter()
 
-    @UIApplicationDelegateAdaptor private var appDelegate: AppDelegate
 
     var body: some Scene {
         WindowGroup {
-//            HomeView(viewRouter:viewRouter)
+
             if (UserDefaults.standard.string(forKey: "token") == nil) {
                 LoginView(viewRouter: viewRouter)
-//                ContentView(viewRouter: viewRouter)
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
             } else {
                 ContentView(viewRouter: viewRouter)
@@ -39,19 +34,10 @@ struct PAPAY_SwiftApp: App {
     }
 }
 
-class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate, MessagingDelegate {
+class AppDelegate: NSObject, UIApplicationDelegate {
     let gcmMessageIDKey =   "gcm.message_id"
     
     static var orientationLock = UIInterfaceOrientationMask.all
-    
-   
-//    extension AppDelegate: MessagingDelegate{
-//        func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-//            let deviceToken:[String:String] = ["token": fcmToken??,""]
-//            print("Device token: ", deviceToken)
-//        }
-//
-//    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
@@ -67,7 +53,6 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
             let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(settings)
         }
-        
         application.registerForRemoteNotifications()
         return true
     }
@@ -76,12 +61,10 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID:\(messageID)")
         }
-        print(userInfo)
         
         completionHandler(UIBackgroundFetchResult.newData)
 
     }
-    
     
     //No callback in simulator -- must use device to get valid push token
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
@@ -93,54 +76,29 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print(error.localizedDescription)
     }
+    
 }
 
-//class NotificationCenter: NSObject, ObservableObject {
-//    @Published var dumbData: UNNotificationResponse?
-//
-//    override init() {
-//        super.init()
-//        UNUserNotificationCenter.current().delegate = self
-//    }
-//}
-//
-//extension NotificationCenter: UNUserNotificationCenterDelegate  {
-//    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-//        completionHandler([.alert, .sound, .badge])
-//    }
-//
-//    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-//        dumbData = response
-//        completionHandler()
-//    }
-//
-//    func userNotificationCenter(_ center: UNUserNotificationCenter, openSettingsFor notification: UNNotification?) { }
-//}
-//
-//class LocalNotification: ObservableObject {
-//    init() {
-//
-//        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (allowed, error) in
-//            //This callback does not trigger on main loop be careful
-//            if allowed {
-//                os_log(.debug, "Allowed")
-//            } else {
-//                os_log(.debug, "Error")
-//            }
-//        }
-//    }
-//
-//    func setLocalNotification(title: String, subtitle: String, body: String, when: Double) {
-//        let content = UNMutableNotificationContent()
-//        content.title = title
-//        content.subtitle = subtitle
-//        content.body = body
-//
-//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: when, repeats: false)
-//        let request = UNNotificationRequest.init(identifier: "localNotificatoin", content: content, trigger: trigger)
-//        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-//
-//    }
-//}
+extension AppDelegate: MessagingDelegate {
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        let deviceToken:[String: String] = ["token":fcmToken ?? ""]
+        print("Device token:", deviceToken)
+    }
+}
+
+@available(iOS 10, *)
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = notification.request.content.userInfo
+        
+        if let messageID = userInfo[gcmMessageIDKey] {
+            print("Message ID: \(messageID)")
+        }
+        print(userInfo)
+        
+        completionHandler([[.banner, .badge, .sound]])
+    }
+}
 
 
