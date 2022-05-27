@@ -21,16 +21,33 @@ class PapayLogin {
     }
     
     func loginpapay() {
+        let fcmtoken:String = UserDefaults.standard.object(forKey: "fcmtoken")! as! String
         let connect_gateway = PapayConnect()
-        let payload = "{\"merchant_id\":\"\(merchant_id)\",\"terminal_id\":\"\(terminal_id)\",\"password\":\"\(acc_password)\"}"
+        let payload: [String : Any] = [
+            "merchant_id":merchant_id,
+            "terminal_id": terminal_id,
+            "password": acc_password,
+            "fcm_token": fcmtoken
+        ]
+        
         connect_gateway.request_enpoint = login_url
-        connect_gateway.request_payload = payload
+        connect_gateway.request_payload = getPostString(params: payload)
         
         return connect_gateway.connect_backend()
         
     }
+    func getPostString(params:[String:Any]) -> String
+        {
+            var data = [String]()
+            for(key, value) in params
+            {
+                data.append(key + "=\(value)")
+            }
+            return data.map { String($0) }.joined(separator: "&")
+        }
     
 }
+
 
 class PapayGeneral {
     
@@ -77,7 +94,7 @@ class PapayConnect {
         let payload = request_payload.data(using: .utf8)
         var request = URLRequest(url: URL(string: request_enpoint)!)
         request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = payload
         
         URLSession.shared.dataTask(with: request) { (data, response, error) in
