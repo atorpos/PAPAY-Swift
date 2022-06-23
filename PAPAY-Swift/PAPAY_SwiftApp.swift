@@ -36,12 +36,24 @@ struct PAPAY_SwiftApp: App {
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     let gcmMessageIDKey =   "gcm.message_id"
+    let appgroup:String = "group.com.paymentasia.papayswift"
     
     static var orientationLock = UIInterfaceOrientationMask.all
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
         Messaging.messaging().delegate = self
+        let standarddefault = UserDefaults.standard
+        print ("standard = \(standarddefault.string(forKey: "token") ?? "")")
+//        print("testing \(UserDefaults.standard.string(forKey: "token") as? String)")
+        UserDefaults(suiteName: appgroup)!.set("\(UserDefaults.standard.string(forKey: "token") ?? "")", forKey: "token")
+        UserDefaults(suiteName: appgroup)!.set("\(UserDefaults.standard.string(forKey: "qrcode") ?? "")", forKey: "qrcode")
+        
+//        if let syncdefaults = UserDefaults(suiteName: appgroup) {
+//            syncdefaults.set(UserDefaults.standard.string(forKey:"token"), forKey: "token")
+//            syncdefaults.synchronize()
+//        }
+        
         
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().delegate = self
@@ -75,6 +87,24 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print(error.localizedDescription)
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        print("entered background")
+    }
+    func application(_ application: UIApplication, performFetchWithCompletionHandler compleionHandler: @escaping(UIBackgroundFetchResult) -> Void) {
+        let painfo = PapayInfo()
+        let return_value: String = painfo.infopapay()
+        guard return_value != "" else {
+            compleionHandler(.failed)
+            return
+        }
+        if return_value.isEmpty {
+            compleionHandler(.noData)
+        } else {
+            compleionHandler(.newData)
+        }
+        
     }
     
 }

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>291789426164-ji2badsiknjovo96qfn3t4v514d7vf23.apps.googleusercontent.com</string>
+	<string>291789426164-pf27jv9da0mf33s5kqgmtcpgl1k6s403.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.291789426164-ji2badsiknjovo96qfn3t4v514d7vf23</string>
+	<string>com.googleusercontent.apps.291789426164-pf27jv9da0mf33s5kqgmtcpgl1k6s403</string>
 	<key>API_KEY</key>
 	<string>AIzaSyB1JYi9GHDHlE4n303Fc4tgmSRvs0b4e7o</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.paymentasia.PAPAY-Swift</string>
+	<string>com.paymentasia.papayswift</string>
 	<key>PROJECT_ID</key>
 	<string>pav2-e0318</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:291789426164:ios:f670d59c5c279c0550bda1</string>
+	<string>1:291789426164:ios:5546648f3af9c83350bda1</string>
 </dict>
 </plist>

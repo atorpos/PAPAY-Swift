@@ -14,6 +14,8 @@ struct ContentView: View {
     @StateObject var viewRouter: ViewRouter
     
     @State var showPopUp = false
+    @State var isAuthenticated = AppManager.IsAuthenticated()
+    @State private var showlogin = false
     
     @Environment(\.managedObjectContext) private var viewContext
 
@@ -22,10 +24,9 @@ struct ContentView: View {
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-
+    
+    @ViewBuilder
     var body: some View {
-        
-        
         GeometryReader { geometry in
             VStack {
                 Spacer()

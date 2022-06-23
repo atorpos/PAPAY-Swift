@@ -2,12 +2,13 @@
 //  widget.swift
 //  widget
 //
-//  Created by Oskar Wong on 5/26/21.
+//  Created by Oskar Wong on 6/16/22.
 //
 
 import WidgetKit
 import SwiftUI
 import Intents
+import Foundation
 import CoreImage.CIFilterBuiltins
 
 struct Provider: IntentTimelineProvider {
@@ -39,38 +40,68 @@ struct Provider: IntentTimelineProvider {
 struct SimpleEntry: TimelineEntry {
     let date: Date
     let configuration: ConfigurationIntent
+    
 }
 
 struct widgetEntryView : View {
     var entry: Provider.Entry
-//    let _model = ConnectModel(url: PAPAYConfig().production_url, endpoint: PAPAYConfig().login_ep, token: "98765r6dtghud83", secret: "86t6ygyufeiehfuhfe")
-
+    let appgroup:String = "group.com.paymentasia.papayswift"
+    
     var body: some View {
 //        Text(entry.date, style: .time)
-        Text("fucl you")
-//        Text(_model.getinfo())
-//        Image(uiImage: generateQRCode(from: _model.getinfo()))
-//            .resizable()
-//            .scaledToFit()
-//            .aspectRatio(contentMode: .fit)
-//            .frame(width: 50, height: 50)
+        VStack(spacing:8){
+            HStack {
+                Text(UserDefaults(suiteName: appgroup)?.string(forKey: "merchant_name") ?? "No Name")
+//                GeometryReader{ geo in
+//                    Image(uiImage: generateQRCode(from:gettoken()))
+//                        .resizable()
+//                        .scaledToFit()
+//                        .aspectRatio(contentMode: .fit)
+//                        .frame(width: geo.size.width*0.4)
+//                        .frame(width: geo.size.width, height: geo.size.height)
+//                }
+            }
+            
+            Text(getaccinfo())
+                .foregroundColor(Color(.white))
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(ContainerRelativeShape().fill(Color(.blue).opacity(0.8)))
+        
+       
+//        Text()
+    }
+    
+    func gettoken() -> String {
+//        let appgroup:String = "group.com.paymentasia.papayswift"
+        let testStr: String! = UserDefaults(suiteName: appgroup)?.string(forKey: "qrcode") ?? ""
+        return testStr ?? "no token"
+    }
+    
+    private func getaccinfo()->String {
+//        let appgroup:String = "group.com.paymentasia.papayswift"
+//        let req_token: String! = UserDefaults(suiteName: appgroup)?.string(forKey: "token") ?? ""
+        let connect_model = PapayInfo()
+        return connect_model.infopapay()
         
     }
     
-}
-func generateQRCode(from string: String) -> UIImage {
-    let context = CIContext()
-    let filter  =   CIFilter.qrCodeGenerator()
-    let data = Data(string.utf8)
-    filter.setValue(data, forKey: "inputMessage")
-    
-    if let outputImage = filter.outputImage {
-        if let cgimg = context.createCGImage(outputImage, from: outputImage.extent){
-            return UIImage(cgImage: cgimg)
+    private func generateQRCode(from string: String) -> UIImage {
+        let context = CIContext()
+        let filter  =   CIFilter.qrCodeGenerator()
+        let data = Data(string.utf8)
+        filter.setValue(data, forKey: "inputMessage")
+        
+        if let outputImage = filter.outputImage {
+            if let cgimg = context.createCGImage(outputImage, from: outputImage.extent){
+                return UIImage(cgImage: cgimg)
+            }
         }
+        return UIImage(systemName: "xmark.circle") ?? UIImage()
     }
-    return UIImage(systemName: "xmark.circle") ?? UIImage()
+    
 }
+
 
 @main
 struct widget: Widget {
@@ -82,7 +113,7 @@ struct widget: Widget {
         }
         .configurationDisplayName("My Widget")
         .description("This is an example widget.")
-        .supportedFamilies([.systemSmall, .systemMedium, .systemLarge])
+        .supportedFamilies([.systemSmall])
     }
 }
 
