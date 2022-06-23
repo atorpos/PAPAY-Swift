@@ -2,10 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSExtension</key>
+	<key>NSAppClip</key>
 	<dict>
-		<key>NSExtensionPointIdentifier</key>
-		<string>com.apple.widgetkit-extension</string>
+		<key>NSAppClipRequestEphemeralUserNotification</key>
+		<false/>
+		<key>NSAppClipRequestLocationConfirmation</key>
+		<false/>
 	</dict>
 </dict>
 </plist>

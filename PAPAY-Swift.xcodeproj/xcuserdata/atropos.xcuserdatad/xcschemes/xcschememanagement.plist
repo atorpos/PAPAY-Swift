@@ -4,15 +4,35 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Clip.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>15</integer>
+		</dict>
 		<key>PAPAY-Swift.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>16</integer>
 		</dict>
-		<key>widgetExtension.xcscheme_^#shared#^_</key>
+		<key>PAPAY.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>17</integer>
+		</dict>
+		<key>PAPAYTests.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>18</integer>
+		</dict>
+		<key>PAPAYUITests.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>15</integer>
+		</dict>
+		<key>widgetExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>17</integer>
 		</dict>
 	</dict>
 </dict>

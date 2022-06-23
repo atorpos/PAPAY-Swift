@@ -17,9 +17,23 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
+	<key>FirebaseAppDelegateProxyEnabled</key>
+	<false/>
+	<key>FirebaseAutomaticScreenReportingEnabled</key>
+	<false/>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBluetoothAlwaysUsageDescription</key>
+	<string>Use Bluetooth for communication with the printer</string>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>Use Bluetooth for communication with the printer</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>Use Local Network for communication with the printer or discovery the printer</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This App uses your location to determine if you allow to request the payment.</string>
+	<key>NSFaceIDUsageDescription</key>
+	<string>Face ID to log in the POS</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -29,6 +43,7 @@
 	<true/>
 	<key>UIBackgroundModes</key>
 	<array>
+		<string>audio</string>
 		<string>fetch</string>
 		<string>remote-notification</string>
 	</array>
@@ -37,6 +52,12 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+	<key>UISupportedExternalAccessoryProtocols</key>
+	<array>
+		<string>jp.star-m.starpro</string>
 	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>

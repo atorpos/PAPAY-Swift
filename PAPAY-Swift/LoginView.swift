@@ -32,6 +32,7 @@ struct LoginView: View {
                     TextField("Merchant ID", text: $username)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .multilineTextAlignment(.center)
+                        .textCase(.uppercase)
                     TextField("Terminal ID", text: $tid)
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .multilineTextAlignment(.center)
@@ -41,7 +42,8 @@ struct LoginView: View {
                         .multilineTextAlignment(.center)
                     Button(action: {
                         let papaylogin = PapayLogin(mid: username, tid: Int(tid) ?? 0, password: password)
-                        papaylogin.loginpapay()
+                        var responst_code:String = papaylogin.loginpapay()
+                        print("response code \(responst_code)")
                     }) {
                         HStack {
                             Spacer()
@@ -60,9 +62,9 @@ struct LoginView: View {
                     .padding(.horizontal, 20)
                     .onSubmit {
                         guard username.isEmpty == false || tid.isEmpty == false || password.isEmpty == false else {return}
-                        print("Start working\(username)")
-                        let connect_model = ConnectModel(url: PAPAYConfig().production_url, endpoint: PAPAYConfig().login_ep, token: "98765r6dtghud83", secret: "86t6ygyufeiehfuhfe", mid: username, tid: tid, password: password)
-                        print(connect_model.getinfo())
+//                        print("Start working\(username)")
+                        let papaylogin = PapayLogin(mid: username, tid: Int(tid) ?? 0, password: password)
+                        print("show the result \(papaylogin.loginpapay())")
                     }
                 }
             }
