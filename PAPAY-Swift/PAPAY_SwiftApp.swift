@@ -23,7 +23,7 @@ struct PAPAY_SwiftApp: App {
         WindowGroup {
 
             if (UserDefaults.standard.string(forKey: "token") == nil) {
-                LoginView(viewRouter: viewRouter)
+                ContentView(viewRouter: viewRouter)
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
             } else {
                 ContentView(viewRouter: viewRouter)
@@ -48,6 +48,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 //        print("testing \(UserDefaults.standard.string(forKey: "token") as? String)")
         UserDefaults(suiteName: appgroup)!.set("\(UserDefaults.standard.string(forKey: "token") ?? "")", forKey: "token")
         UserDefaults(suiteName: appgroup)!.set("\(UserDefaults.standard.string(forKey: "qrcode") ?? "")", forKey: "qrcode")
+//        biomatmodel().authenticate()
         
 //        if let syncdefaults = UserDefaults(suiteName: appgroup) {
 //            syncdefaults.set(UserDefaults.standard.string(forKey:"token"), forKey: "token")

@@ -185,7 +185,7 @@ class PapayConnect {
                     case "https://gateway.pa-sys.com/papay/information":
                         print("info page")
                         UserDefaults(suiteName: appgroup)?.set(json_payload?["amount"] as! String, forKey: "amount")
-                        UserDefaults(suiteName: appgroup)?.set(json_payload?["last_transaction_time"] as! Int, forKey: "last_transaction_time")
+                        UserDefaults(suiteName: appgroup)?.set(json_payload?["last_transaction_time"] as! String, forKey: "last_transaction_time")
                         UserDefaults(suiteName: appgroup)?.set(json_payload?["merchant_store_address"] as! String, forKey: "merchant_store_address")
                         UserDefaults(suiteName: appgroup)?.set(json_payload?["name"] as! String, forKey: "merchant_name")
                         UserDefaults(suiteName: appgroup)?.set(json_payload?["terminal_id"] as! String, forKey: "terminal_id")

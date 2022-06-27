@@ -10,7 +10,7 @@ import LocalAuthentication
 
 class biomatmodel {
 
-    func authenticate() {
+    func authenticate() -> Void {
         let context = LAContext()
         var error: NSError?
         
@@ -20,8 +20,10 @@ class biomatmodel {
             context.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, authenticationError in
                 if success {
                     print("is success")
+//                    return true
                 } else {
                     print("not success")
+//                    return false
                 }
             }
         } else {

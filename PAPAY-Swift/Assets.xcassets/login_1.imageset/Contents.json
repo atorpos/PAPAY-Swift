@@ -1,15 +1,17 @@
 {
   "images" : [
     {
+      "filename" : "hong-kong_535x301.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "hong-kong_1067x601.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "login_1.png",
+      "filename" : "hong-kong_1600x901.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

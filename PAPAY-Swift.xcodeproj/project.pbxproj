@@ -13,6 +13,7 @@
 		4919A4022745044100C794DF /* iPadHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919A4012745044100C794DF /* iPadHomeView.swift */; };
 		4919A40427450C4A00C794DF /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919A40327450C4A00C794DF /* ItemListView.swift */; };
 		491A7C0F2743A9D500C41C2C /* transaction-model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A7C0E2743A9D500C41C2C /* transaction-model.swift */; };
+		492AF709286467F500653F83 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492AF708286467F500653F83 /* AppSettings.swift */; };
 		4930519126F345C40057BFED /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930519026F345C40057BFED /* FirstView.swift */; };
 		4930519326F4826B0057BFED /* FirstDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930519226F4826B0057BFED /* FirstDetailView.swift */; };
 		4933355926DE38E500F30AD8 /* connect-model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933355826DE38E500F30AD8 /* connect-model.swift */; };
@@ -66,6 +67,7 @@
 		49D1640526FDCD0E00169409 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1640426FDCD0E00169409 /* SettingsView.swift */; };
 		49D1640726FDCD4000169409 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1640626FDCD4000169409 /* TransactionsView.swift */; };
 		49D1640A2701C30F00169409 /* ui-model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D164092701C30F00169409 /* ui-model.swift */; };
+		49F0D84F2869ABE3006DCC75 /* StaticQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0D84E2869ABE3006DCC75 /* StaticQRView.swift */; };
 		49FCD5932733CF17008535ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49FCD5922733CF17008535ED /* GoogleService-Info.plist */; };
 		586973E04483B41CFD15EBA2 /* Pods_PAPAY_Swift_PAPAY_SwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D48C2CE64D1286EF535F4 /* Pods_PAPAY_Swift_PAPAY_SwiftUITests.framework */; };
 		6BD2839340F06A625601986A /* Pods_PAPAY_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0F4A48837D1E01606E2153 /* Pods_PAPAY_Swift.framework */; };
@@ -151,6 +153,7 @@
 		4919A4012745044100C794DF /* iPadHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadHomeView.swift; sourceTree = "<group>"; };
 		4919A40327450C4A00C794DF /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		491A7C0E2743A9D500C41C2C /* transaction-model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "transaction-model.swift"; sourceTree = "<group>"; };
+		492AF708286467F500653F83 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		4930519026F345C40057BFED /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		4930519226F4826B0057BFED /* FirstDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDetailView.swift; sourceTree = "<group>"; };
 		4933355826DE38E500F30AD8 /* connect-model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "connect-model.swift"; sourceTree = "<group>"; };
@@ -209,6 +212,7 @@
 		49D1640426FDCD0E00169409 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		49D1640626FDCD4000169409 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		49D164092701C30F00169409 /* ui-model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ui-model.swift"; sourceTree = "<group>"; };
+		49F0D84E2869ABE3006DCC75 /* StaticQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticQRView.swift; sourceTree = "<group>"; };
 		49FCD5922733CF17008535ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A0DD9FB22184596F0D7E042 /* Pods_PAPAY_SwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PAPAY_SwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		65A2EFFD25009A645755C461 /* Pods-widgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-widgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-widgetExtension/Pods-widgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -364,12 +368,14 @@
 				494394F22823DDF00000A55C /* LoginView.swift */,
 				499E05E52742548D00010CDB /* ViewRouter.swift */,
 				4919A3FF274502A700C794DF /* HomeView.swift */,
+				49F0D84E2869ABE3006DCC75 /* StaticQRView.swift */,
 				4919A4012745044100C794DF /* iPadHomeView.swift */,
 				49A7D944274604A9004CC429 /* keypadView.swift */,
 				496EA807274F2E7F00B6F208 /* DigitDisplayView.swift */,
 				4919A40327450C4A00C794DF /* ItemListView.swift */,
 				49D1640426FDCD0E00169409 /* SettingsView.swift */,
 				499E05E727426C6300010CDB /* SettingDetailsView.swift */,
+				492AF708286467F500653F83 /* AppSettings.swift */,
 				49D1640626FDCD4000169409 /* TransactionsView.swift */,
 				4930519026F345C40057BFED /* FirstView.swift */,
 				4930519226F4826B0057BFED /* FirstDetailView.swift */,
@@ -856,6 +862,7 @@
 				49393C55265E455400903192 /* Persistence.swift in Sources */,
 				496EA80A274F314D00B6F208 /* calculate-model.swift in Sources */,
 				494394F32823DDF00000A55C /* LoginView.swift in Sources */,
+				492AF709286467F500653F83 /* AppSettings.swift in Sources */,
 				499E05E62742548D00010CDB /* ViewRouter.swift in Sources */,
 				49A7D945274604A9004CC429 /* keypadView.swift in Sources */,
 				499E05E827426C6300010CDB /* SettingDetailsView.swift in Sources */,
@@ -868,6 +875,7 @@
 				4946E7F828641E5A00BB4DB7 /* BioMat-model.swift in Sources */,
 				49D1640726FDCD4000169409 /* TransactionsView.swift in Sources */,
 				49393C4C265E455300903192 /* PAPAY_SwiftApp.swift in Sources */,
+				49F0D84F2869ABE3006DCC75 /* StaticQRView.swift in Sources */,
 				491A7C0F2743A9D500C41C2C /* transaction-model.swift in Sources */,
 				4930519326F4826B0057BFED /* FirstDetailView.swift in Sources */,
 				494D530F284E02E3001A73EA /* AppManager.swift in Sources */,

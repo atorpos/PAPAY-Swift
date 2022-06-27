@@ -18,16 +18,24 @@ struct SettingDetailsView: View {
         switch words {
             case "Help":
                 Webview(url: URL(string: "https://www.papay.com.hk")!)
+                    .navigationTitle(words)
             case "FAQ":
                 Webview(url: URL(string: "https://merchant.pa-sys.com/papay/faq")!)
+                    .navigationTitle(words)
             case "Term of Services":
                 Webview(url: URL(string: "https://merchant.pa-sys.com/alipay/tnc")!)
+                    .navigationTitle(words)
             case "Information Collection Statement":
                 Webview(url: URL(string: "https://www.paymentasia.com/ct/personal-information-collection-statement")!)
+                    .navigationTitle(words)
             case "About":
                 Webview(url: URL(string: "https://www.paymentasia.com")!)
+                    .navigationTitle(words)
             case "Merchant Portal":
                 Webview(url: URL(string: "https://s.awoz.co/js_test/")!)
+                    .navigationTitle(words)
+            case "App Settings":
+                AppSettings()
             default:
                 Text("Help")
         }
