@@ -14,7 +14,7 @@ struct keypadView: View {
     @State var numberlabel = "0";
     
     var body: some View {
-        let getkeypadno = CalculateModel()
+//        let getkeypadno = CalculateModel()
         GeometryReader { geometer in
             VStack(alignment: .center, spacing: 0) {
                 //display pad view

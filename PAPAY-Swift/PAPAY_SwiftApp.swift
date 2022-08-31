@@ -71,8 +71,17 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any], fetchCompletionHandler completionHandler: @escaping(UIBackgroundFetchResult)->Void) {
+        
+        let state : UIApplication.State = application.applicationState
+        
         if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID:\(messageID)")
+        }
+        
+        if(state == .inactive || state == .background) {
+            
+        } else {
+        
         }
         
         completionHandler(UIBackgroundFetchResult.newData)
@@ -126,14 +135,22 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         let userInfo = notification.request.content.userInfo
+        let aps = userInfo["aps"] as? [String: Any]
+        let alert = aps?["alert"] as? [String: String]
+        let title = alert?["title"]
+        let body = alert?["body"]
         
         if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID: \(messageID)")
         }
-        print(userInfo)
+//        let messageijson = userInfo["aps"](using: .utf8)!
+//        let json = try? JSONSerialization.jsonObject(with: messageijson, options: []) as? NSDictionary
+        print("user info \(String(describing: title)) and \(body)")
+        print("aps \(aps)")
         
         completionHandler([[.banner, .badge, .sound]])
     }
+
 }
 
 

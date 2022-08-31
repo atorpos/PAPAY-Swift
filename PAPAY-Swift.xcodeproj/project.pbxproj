@@ -3,17 +3,24 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		16BD92BBF8E56D0016FB97B4 /* Pods_PAPAY_SwiftTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A0DD9FB22184596F0D7E042 /* Pods_PAPAY_SwiftTests.framework */; };
+		4906B0CE2899200600D20492 /* shopify_response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4906B0CD2899200600D20492 /* shopify_response.swift */; };
+		4906B0CF2899201A00D20492 /* shopify_response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4906B0CD2899200600D20492 /* shopify_response.swift */; };
 		49181E4C2851FF36003B3E0A /* Text-to-Speech.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49181E4B2851FF36003B3E0A /* Text-to-Speech.swift */; };
+		491904FD28AB9C0A0087B3C6 /* TransactionDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491904FC28AB9C0A0087B3C6 /* TransactionDetailsView.swift */; };
 		4919A400274502A700C794DF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919A3FF274502A700C794DF /* HomeView.swift */; };
 		4919A4022745044100C794DF /* iPadHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919A4012745044100C794DF /* iPadHomeView.swift */; };
 		4919A40427450C4A00C794DF /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4919A40327450C4A00C794DF /* ItemListView.swift */; };
 		491A7C0F2743A9D500C41C2C /* transaction-model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491A7C0E2743A9D500C41C2C /* transaction-model.swift */; };
+		492560BA28865C5000E9E991 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 492560B928865C5000E9E991 /* CodeScanner */; };
+		492560BC2886A51D00E9E991 /* ProcessingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492560BB2886A51D00E9E991 /* ProcessingView.swift */; };
+		492560BF2886B92300E9E991 /* TransactionSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492560BE2886B92300E9E991 /* TransactionSearchView.swift */; };
 		492AF709286467F500653F83 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492AF708286467F500653F83 /* AppSettings.swift */; };
+		492DEAF32875688200DF3EA9 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492DEAF22875688200DF3EA9 /* WebView.swift */; };
 		4930519126F345C40057BFED /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930519026F345C40057BFED /* FirstView.swift */; };
 		4930519326F4826B0057BFED /* FirstDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4930519226F4826B0057BFED /* FirstDetailView.swift */; };
 		4933355926DE38E500F30AD8 /* connect-model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4933355826DE38E500F30AD8 /* connect-model.swift */; };
@@ -32,24 +39,33 @@
 		49393C63265E455400903192 /* PAPAY_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49393C62265E455400903192 /* PAPAY_SwiftTests.swift */; };
 		49393C6E265E455400903192 /* PAPAY_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49393C6D265E455400903192 /* PAPAY_SwiftUITests.swift */; };
 		493AAC5C27E41F5E00DC0C2E /* pa-connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AAC5B27E41F5E00DC0C2E /* pa-connect.swift */; };
+		493AB9BC288FCA1F0056661D /* Transactions_Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AB9BB288FCA1F0056661D /* Transactions_Response.swift */; };
+		493AB9BE288FCD090056661D /* Info_Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AB9BD288FCD090056661D /* Info_Response.swift */; };
+		493AB9C0288FEE680056661D /* Signin_Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493AB9BF288FEE680056661D /* Signin_Response.swift */; };
 		494394F32823DDF00000A55C /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494394F22823DDF00000A55C /* LoginView.swift */; };
 		4946E7F828641E5A00BB4DB7 /* BioMat-model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4946E7F728641E5A00BB4DB7 /* BioMat-model.swift */; };
 		494D530F284E02E3001A73EA /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 494D530E284E02E3001A73EA /* AppManager.swift */; };
 		49512C0126F0442000EE07AF /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49512C0026F0442000EE07AF /* AppConfig.swift */; };
 		49523ECE285C70A3007102CA /* ContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49523ECD285C70A3007102CA /* ContentRepository.swift */; };
 		49523ECF285C70A3007102CA /* ContentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49523ECD285C70A3007102CA /* ContentRepository.swift */; };
+		495B89B7286C3E590002E97E /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B89B6286C3E590002E97E /* PaymentView.swift */; };
+		495B89BA286C482F0002E97E /* ScannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B89B9286C482F0002E97E /* ScannerView.swift */; };
+		495B89BC286C4FFD0002E97E /* ItemDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495B89BB286C4FFD0002E97E /* ItemDetailsView.swift */; };
+		495B89BD286C5B6C0002E97E /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDCB08286AE11800853732 /* Utils.swift */; };
+		495FAD0A28A0F89E007A75EE /* App_location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495FAD0928A0F89E007A75EE /* App_location.swift */; };
+		49637D432880132A005D5831 /* iPhoneKeypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49637D422880132A005D5831 /* iPhoneKeypadView.swift */; };
 		496794202861C41500F0164E /* papay-connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FAAA02832399E00705581 /* papay-connect.swift */; };
 		496794212861C58700F0164E /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49512C0026F0442000EE07AF /* AppConfig.swift */; };
 		496794222861C58800F0164E /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49512C0026F0442000EE07AF /* AppConfig.swift */; };
 		496EA808274F2E7F00B6F208 /* DigitDisplayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496EA807274F2E7F00B6F208 /* DigitDisplayView.swift */; };
 		496EA80A274F314D00B6F208 /* calculate-model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496EA809274F314D00B6F208 /* calculate-model.swift */; };
 		496FAAA12832399E00705581 /* papay-connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FAAA02832399E00705581 /* papay-connect.swift */; };
+		498973A828ACF38200FE7904 /* WebKit_model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498973A728ACF38200FE7904 /* WebKit_model.swift */; };
 		499E05E62742548D00010CDB /* ViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E05E52742548D00010CDB /* ViewRouter.swift */; };
 		499E05E827426C6300010CDB /* SettingDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499E05E727426C6300010CDB /* SettingDetailsView.swift */; };
 		49A7D945274604A9004CC429 /* keypadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A7D944274604A9004CC429 /* keypadView.swift */; };
 		49AB85BD2857264F0017D9AC /* ClipApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AB85BC2857264F0017D9AC /* ClipApp.swift */; };
 		49AB85BF2857264F0017D9AC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AB85BE2857264F0017D9AC /* ContentView.swift */; };
-		49AB85C1285726500017D9AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49AB85C0285726500017D9AC /* Assets.xcassets */; };
 		49AB85C4285726500017D9AC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49AB85C3285726500017D9AC /* Preview Assets.xcassets */; };
 		49AB85D0285726500017D9AC /* ClipTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AB85CF285726500017D9AC /* ClipTests.swift */; };
 		49AB85DA285726500017D9AC /* ClipUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AB85D9285726500017D9AC /* ClipUITests.swift */; };
@@ -59,18 +75,31 @@
 		49AC81A0285B21A400A8D05B /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49393C81265E467200903192 /* WidgetKit.framework */; };
 		49AC81A1285B21A400A8D05B /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49393C83265E467200903192 /* SwiftUI.framework */; };
 		49AC81A4285B21A400A8D05B /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC81A3285B21A400A8D05B /* widget.swift */; };
-		49AC81A7285B21A500A8D05B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49AC81A6285B21A500A8D05B /* Assets.xcassets */; };
 		49AC81A9285B21A500A8D05B /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 49AC81A5285B21A400A8D05B /* widget.intentdefinition */; };
 		49AC81AA285B21A500A8D05B /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 49AC81A5285B21A400A8D05B /* widget.intentdefinition */; };
 		49AC81AD285B21A500A8D05B /* widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49AC819F285B21A400A8D05B /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		49BCAECB28856E7D00ACFAE2 /* camViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BCAECA28856E7D00ACFAE2 /* camViewModel.swift */; };
+		49BEB15728811416002C2FEB /* product-json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BEB15628811416002C2FEB /* product-json.swift */; };
+		49BEB15828811416002C2FEB /* product-json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BEB15628811416002C2FEB /* product-json.swift */; };
 		49C97E792759F6CC00373591 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49C97E7B2759F6CC00373591 /* Launch Screen.storyboard */; };
 		49D1640526FDCD0E00169409 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1640426FDCD0E00169409 /* SettingsView.swift */; };
 		49D1640726FDCD4000169409 /* TransactionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1640626FDCD4000169409 /* TransactionsView.swift */; };
 		49D1640A2701C30F00169409 /* ui-model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D164092701C30F00169409 /* ui-model.swift */; };
+		49D2735F2872CE8300E89730 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49393C4F265E455400903192 /* Assets.xcassets */; };
+		49D273602872CE8700E89730 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49393C4F265E455400903192 /* Assets.xcassets */; };
+		49D273622872E32D00E89730 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D273612872E32D00E89730 /* PaymentView.swift */; };
+		49DDCB07286ADED600853732 /* Popups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDCB06286ADED600853732 /* Popups.swift */; };
+		49DDCB09286AE11800853732 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDCB08286AE11800853732 /* Utils.swift */; };
+		49DDCB0B286AF2D300853732 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDCB0A286AF2D200853732 /* BalanceView.swift */; };
+		49DE4F7D289B6AF300B70DDE /* papay-connect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FAAA02832399E00705581 /* papay-connect.swift */; };
+		49DE4F7F289CC29200B70DDE /* product_table_structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DE4F7E289CC29200B70DDE /* product_table_structure.swift */; };
+		49DE4F80289CC29200B70DDE /* product_table_structure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DE4F7E289CC29200B70DDE /* product_table_structure.swift */; };
+		49E4612D28AA3057009A4630 /* Request_Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E4612C28AA3056009A4630 /* Request_Response.swift */; };
 		49F0D84F2869ABE3006DCC75 /* StaticQRView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F0D84E2869ABE3006DCC75 /* StaticQRView.swift */; };
 		49FCD5932733CF17008535ED /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49FCD5922733CF17008535ED /* GoogleService-Info.plist */; };
 		586973E04483B41CFD15EBA2 /* Pods_PAPAY_Swift_PAPAY_SwiftUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F19D48C2CE64D1286EF535F4 /* Pods_PAPAY_Swift_PAPAY_SwiftUITests.framework */; };
 		6BD2839340F06A625601986A /* Pods_PAPAY_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B0F4A48837D1E01606E2153 /* Pods_PAPAY_Swift.framework */; };
+		A544C7E792EE553AC6AB0E02 /* Pods_widgetExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D98844D31FE0D2A59455DF47 /* Pods_widgetExtension.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -148,12 +177,17 @@
 		1B0F4A48837D1E01606E2153 /* Pods_PAPAY_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PAPAY_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		241452C861E857B206670BE2 /* Pods-widgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-widgetExtension.release.xcconfig"; path = "Target Support Files/Pods-widgetExtension/Pods-widgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 		3F8CC3E6209C7EB9161A04CA /* Pods-PAPAY-Swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PAPAY-Swift.debug.xcconfig"; path = "Target Support Files/Pods-PAPAY-Swift/Pods-PAPAY-Swift.debug.xcconfig"; sourceTree = "<group>"; };
+		4906B0CD2899200600D20492 /* shopify_response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = shopify_response.swift; sourceTree = "<group>"; };
 		49181E4B2851FF36003B3E0A /* Text-to-Speech.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text-to-Speech.swift"; sourceTree = "<group>"; };
+		491904FC28AB9C0A0087B3C6 /* TransactionDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionDetailsView.swift; sourceTree = "<group>"; };
 		4919A3FF274502A700C794DF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		4919A4012745044100C794DF /* iPadHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPadHomeView.swift; sourceTree = "<group>"; };
 		4919A40327450C4A00C794DF /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		491A7C0E2743A9D500C41C2C /* transaction-model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "transaction-model.swift"; sourceTree = "<group>"; };
+		492560BB2886A51D00E9E991 /* ProcessingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessingView.swift; sourceTree = "<group>"; };
+		492560BE2886B92300E9E991 /* TransactionSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionSearchView.swift; sourceTree = "<group>"; };
 		492AF708286467F500653F83 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
+		492DEAF22875688200DF3EA9 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		4930519026F345C40057BFED /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		4930519226F4826B0057BFED /* FirstDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstDetailView.swift; sourceTree = "<group>"; };
 		4933355826DE38E500F30AD8 /* connect-model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "connect-model.swift"; sourceTree = "<group>"; };
@@ -176,6 +210,9 @@
 		49393C81265E467200903192 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		49393C83265E467200903192 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
 		493AAC5B27E41F5E00DC0C2E /* pa-connect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "pa-connect.swift"; sourceTree = "<group>"; };
+		493AB9BB288FCA1F0056661D /* Transactions_Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transactions_Response.swift; sourceTree = "<group>"; };
+		493AB9BD288FCD090056661D /* Info_Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Info_Response.swift; sourceTree = "<group>"; };
+		493AB9BF288FEE680056661D /* Signin_Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Signin_Response.swift; sourceTree = "<group>"; };
 		494394F22823DDF00000A55C /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4946E7F728641E5A00BB4DB7 /* BioMat-model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BioMat-model.swift"; sourceTree = "<group>"; };
 		494D530E284E02E3001A73EA /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
@@ -183,9 +220,15 @@
 		49512C0026F0442000EE07AF /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		49523ECD285C70A3007102CA /* ContentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentRepository.swift; sourceTree = "<group>"; };
 		49523ED0285C91B9007102CA /* widgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = widgetExtension.entitlements; sourceTree = "<group>"; };
+		495B89B6286C3E590002E97E /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		495B89B9286C482F0002E97E /* ScannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerView.swift; sourceTree = "<group>"; };
+		495B89BB286C4FFD0002E97E /* ItemDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailsView.swift; sourceTree = "<group>"; };
+		495FAD0928A0F89E007A75EE /* App_location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App_location.swift; sourceTree = "<group>"; };
+		49637D422880132A005D5831 /* iPhoneKeypadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iPhoneKeypadView.swift; sourceTree = "<group>"; };
 		496EA807274F2E7F00B6F208 /* DigitDisplayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DigitDisplayView.swift; sourceTree = "<group>"; };
 		496EA809274F314D00B6F208 /* calculate-model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "calculate-model.swift"; sourceTree = "<group>"; };
 		496FAAA02832399E00705581 /* papay-connect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "papay-connect.swift"; sourceTree = "<group>"; };
+		498973A728ACF38200FE7904 /* WebKit_model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebKit_model.swift; sourceTree = "<group>"; };
 		499E05E52742548D00010CDB /* ViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewRouter.swift; sourceTree = "<group>"; };
 		499E05E727426C6300010CDB /* SettingDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDetailsView.swift; sourceTree = "<group>"; };
 		49A7D944274604A9004CC429 /* keypadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keypadView.swift; sourceTree = "<group>"; };
@@ -193,7 +236,6 @@
 		49AB85BA2857264F0017D9AC /* Clip.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clip.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49AB85BC2857264F0017D9AC /* ClipApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClipApp.swift; sourceTree = "<group>"; };
 		49AB85BE2857264F0017D9AC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		49AB85C0285726500017D9AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49AB85C3285726500017D9AC /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		49AB85C5285726500017D9AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49AB85C6285726500017D9AC /* Clip.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Clip.entitlements; sourceTree = "<group>"; };
@@ -206,12 +248,19 @@
 		49AC819F285B21A400A8D05B /* widgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = widgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		49AC81A3285B21A400A8D05B /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
 		49AC81A5285B21A400A8D05B /* widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = widget.intentdefinition; sourceTree = "<group>"; };
-		49AC81A6285B21A500A8D05B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49AC81A8285B21A500A8D05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49BCAECA28856E7D00ACFAE2 /* camViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = camViewModel.swift; sourceTree = "<group>"; };
+		49BEB15628811416002C2FEB /* product-json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "product-json.swift"; sourceTree = "<group>"; };
 		49C97E7C2759F6D100373591 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
 		49D1640426FDCD0E00169409 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		49D1640626FDCD4000169409 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		49D164092701C30F00169409 /* ui-model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ui-model.swift"; sourceTree = "<group>"; };
+		49D273612872E32D00E89730 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		49DDCB06286ADED600853732 /* Popups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popups.swift; sourceTree = "<group>"; };
+		49DDCB08286AE11800853732 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		49DDCB0A286AF2D200853732 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
+		49DE4F7E289CC29200B70DDE /* product_table_structure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = product_table_structure.swift; sourceTree = "<group>"; };
+		49E4612C28AA3056009A4630 /* Request_Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request_Response.swift; sourceTree = "<group>"; };
 		49F0D84E2869ABE3006DCC75 /* StaticQRView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticQRView.swift; sourceTree = "<group>"; };
 		49FCD5922733CF17008535ED /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4A0DD9FB22184596F0D7E042 /* Pods_PAPAY_SwiftTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PAPAY_SwiftTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,6 +278,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				492560BA28865C5000E9E991 /* CodeScanner in Frameworks */,
 				6BD2839340F06A625601986A /* Pods_PAPAY_Swift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,6 +326,7 @@
 			files = (
 				49AC81A1285B21A400A8D05B /* SwiftUI.framework in Frameworks */,
 				49AC81A0285B21A400A8D05B /* WidgetKit.framework in Frameworks */,
+				A544C7E792EE553AC6AB0E02 /* Pods_widgetExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +348,26 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		492560BD2886A53000E9E991 /* Payment flow */ = {
+			isa = PBXGroup;
+			children = (
+				495B89B9286C482F0002E97E /* ScannerView.swift */,
+				492560BB2886A51D00E9E991 /* ProcessingView.swift */,
+				49637D422880132A005D5831 /* iPhoneKeypadView.swift */,
+			);
+			path = "Payment flow";
+			sourceTree = "<group>";
+		};
+		492560C02886B92900E9E991 /* Transactions */ = {
+			isa = PBXGroup;
+			children = (
+				49D1640626FDCD4000169409 /* TransactionsView.swift */,
+				492560BE2886B92300E9E991 /* TransactionSearchView.swift */,
+				491904FC28AB9C0A0087B3C6 /* TransactionDetailsView.swift */,
+			);
+			path = Transactions;
+			sourceTree = "<group>";
+		};
 		4933355726DE388800F30AD8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,6 +381,16 @@
 				494D530E284E02E3001A73EA /* AppManager.swift */,
 				49523ECD285C70A3007102CA /* ContentRepository.swift */,
 				4946E7F728641E5A00BB4DB7 /* BioMat-model.swift */,
+				49BEB15628811416002C2FEB /* product-json.swift */,
+				493AB9BB288FCA1F0056661D /* Transactions_Response.swift */,
+				49E4612C28AA3056009A4630 /* Request_Response.swift */,
+				493AB9BD288FCD090056661D /* Info_Response.swift */,
+				493AB9BF288FEE680056661D /* Signin_Response.swift */,
+				49BCAECA28856E7D00ACFAE2 /* camViewModel.swift */,
+				4906B0CD2899200600D20492 /* shopify_response.swift */,
+				49DE4F7E289CC29200B70DDE /* product_table_structure.swift */,
+				495FAD0928A0F89E007A75EE /* App_location.swift */,
+				498973A728ACF38200FE7904 /* WebKit_model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -363,11 +444,15 @@
 				49FCD5922733CF17008535ED /* GoogleService-Info.plist */,
 				494EBDAE26F872D800672770 /* PAPAY-Swift.entitlements */,
 				49C97E7B2759F6CC00373591 /* Launch Screen.storyboard */,
+				495B89B8286C3E6C0002E97E /* Popups */,
 				49393C4B265E455300903192 /* PAPAY_SwiftApp.swift */,
-				49393C4D265E455300903192 /* ContentView.swift */,
+				498D8DB62887D8C20005801D /* Main Page */,
 				494394F22823DDF00000A55C /* LoginView.swift */,
 				499E05E52742548D00010CDB /* ViewRouter.swift */,
 				4919A3FF274502A700C794DF /* HomeView.swift */,
+				49DDCB0A286AF2D200853732 /* BalanceView.swift */,
+				495B89B6286C3E590002E97E /* PaymentView.swift */,
+				492560BD2886A53000E9E991 /* Payment flow */,
 				49F0D84E2869ABE3006DCC75 /* StaticQRView.swift */,
 				4919A4012745044100C794DF /* iPadHomeView.swift */,
 				49A7D944274604A9004CC429 /* keypadView.swift */,
@@ -376,7 +461,7 @@
 				49D1640426FDCD0E00169409 /* SettingsView.swift */,
 				499E05E727426C6300010CDB /* SettingDetailsView.swift */,
 				492AF708286467F500653F83 /* AppSettings.swift */,
-				49D1640626FDCD4000169409 /* TransactionsView.swift */,
+				492560C02886B92900E9E991 /* Transactions */,
 				4930519026F345C40057BFED /* FirstView.swift */,
 				4930519226F4826B0057BFED /* FirstDetailView.swift */,
 				49393C4F265E455400903192 /* Assets.xcassets */,
@@ -437,12 +522,31 @@
 			path = Config;
 			sourceTree = "<group>";
 		};
+		495B89B8286C3E6C0002E97E /* Popups */ = {
+			isa = PBXGroup;
+			children = (
+				49DDCB08286AE11800853732 /* Utils.swift */,
+				49DDCB06286ADED600853732 /* Popups.swift */,
+			);
+			path = Popups;
+			sourceTree = "<group>";
+		};
+		498D8DB62887D8C20005801D /* Main Page */ = {
+			isa = PBXGroup;
+			children = (
+				49393C4D265E455300903192 /* ContentView.swift */,
+			);
+			path = "Main Page";
+			sourceTree = "<group>";
+		};
 		49AB85BB2857264F0017D9AC /* Clip */ = {
 			isa = PBXGroup;
 			children = (
 				49AB85BC2857264F0017D9AC /* ClipApp.swift */,
 				49AB85BE2857264F0017D9AC /* ContentView.swift */,
-				49AB85C0285726500017D9AC /* Assets.xcassets */,
+				495B89BB286C4FFD0002E97E /* ItemDetailsView.swift */,
+				49D273612872E32D00E89730 /* PaymentView.swift */,
+				492DEAF22875688200DF3EA9 /* WebView.swift */,
 				49AB85C5285726500017D9AC /* Info.plist */,
 				49AB85C6285726500017D9AC /* Clip.entitlements */,
 				49AB85C2285726500017D9AC /* Preview Content */,
@@ -480,7 +584,6 @@
 			children = (
 				49AC81A3285B21A400A8D05B /* widget.swift */,
 				49AC81A5285B21A400A8D05B /* widget.intentdefinition */,
-				49AC81A6285B21A500A8D05B /* Assets.xcassets */,
 				49AC81A8285B21A500A8D05B /* Info.plist */,
 			);
 			path = widget;
@@ -508,6 +611,9 @@
 				49AC81AC285B21A500A8D05B /* PBXTargetDependency */,
 			);
 			name = "PAPAY-Swift";
+			packageProductDependencies = (
+				492560B928865C5000E9E991 /* CodeScanner */,
+			);
 			productName = "PAPAY-Swift";
 			productReference = 49393C48265E455300903192 /* PAPAY-Swift.app */;
 			productType = "com.apple.product-type.application";
@@ -608,6 +714,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49AC81B0285B21A500A8D05B /* Build configuration list for PBXNativeTarget "widgetExtension" */;
 			buildPhases = (
+				F763BD018DDC8CE81380BB6E /* [CP] Check Pods Manifest.lock */,
 				49AC819B285B21A400A8D05B /* Sources */,
 				49AC819C285B21A400A8D05B /* Frameworks */,
 				49AC819D285B21A400A8D05B /* Resources */,
@@ -666,6 +773,9 @@
 				Base,
 			);
 			mainGroup = 49393C3F265E455300903192;
+			packageReferences = (
+				492560B828865C5000E9E991 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			productRefGroup = 49393C49265E455300903192 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -716,7 +826,7 @@
 				4938603228631A78003BE54E /* OpeningPG_logo.png in Resources */,
 				4938602F28631A78003BE54E /* pa_logo_1200x180.png in Resources */,
 				49AB85C4285726500017D9AC /* Preview Assets.xcassets in Resources */,
-				49AB85C1285726500017D9AC /* Assets.xcassets in Resources */,
+				49D2735F2872CE8300E89730 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,8 +848,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49AC81A7285B21A500A8D05B /* Assets.xcassets in Resources */,
 				4938603328631A78003BE54E /* OpeningPG_logo.png in Resources */,
+				49D273602872CE8700E89730 /* Assets.xcassets in Resources */,
 				4938603028631A78003BE54E /* pa_logo_1200x180.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -847,6 +957,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		F763BD018DDC8CE81380BB6E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-widgetExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -854,13 +986,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49DE4F7F289CC29200B70DDE /* product_table_structure.swift in Sources */,
 				496FAAA12832399E00705581 /* papay-connect.swift in Sources */,
 				4933355926DE38E500F30AD8 /* connect-model.swift in Sources */,
 				49181E4C2851FF36003B3E0A /* Text-to-Speech.swift in Sources */,
+				493AB9BC288FCA1F0056661D /* Transactions_Response.swift in Sources */,
+				495B89B7286C3E590002E97E /* PaymentView.swift in Sources */,
 				49AC81AA285B21A500A8D05B /* widget.intentdefinition in Sources */,
 				49512C0126F0442000EE07AF /* AppConfig.swift in Sources */,
 				49393C55265E455400903192 /* Persistence.swift in Sources */,
+				492560BF2886B92300E9E991 /* TransactionSearchView.swift in Sources */,
 				496EA80A274F314D00B6F208 /* calculate-model.swift in Sources */,
+				49DDCB0B286AF2D300853732 /* BalanceView.swift in Sources */,
+				49BCAECB28856E7D00ACFAE2 /* camViewModel.swift in Sources */,
+				495B89BA286C482F0002E97E /* ScannerView.swift in Sources */,
+				49637D432880132A005D5831 /* iPhoneKeypadView.swift in Sources */,
+				498973A828ACF38200FE7904 /* WebKit_model.swift in Sources */,
+				49BEB15728811416002C2FEB /* product-json.swift in Sources */,
 				494394F32823DDF00000A55C /* LoginView.swift in Sources */,
 				492AF709286467F500653F83 /* AppSettings.swift in Sources */,
 				499E05E62742548D00010CDB /* ViewRouter.swift in Sources */,
@@ -868,6 +1010,9 @@
 				499E05E827426C6300010CDB /* SettingDetailsView.swift in Sources */,
 				496EA808274F2E7F00B6F208 /* DigitDisplayView.swift in Sources */,
 				493AAC5C27E41F5E00DC0C2E /* pa-connect.swift in Sources */,
+				4906B0CE2899200600D20492 /* shopify_response.swift in Sources */,
+				49DDCB07286ADED600853732 /* Popups.swift in Sources */,
+				495FAD0A28A0F89E007A75EE /* App_location.swift in Sources */,
 				49523ECE285C70A3007102CA /* ContentRepository.swift in Sources */,
 				49AC1CC02848C2B600A8AE4E /* MapView.swift in Sources */,
 				49393C4E265E455300903192 /* ContentView.swift in Sources */,
@@ -878,11 +1023,17 @@
 				49F0D84F2869ABE3006DCC75 /* StaticQRView.swift in Sources */,
 				491A7C0F2743A9D500C41C2C /* transaction-model.swift in Sources */,
 				4930519326F4826B0057BFED /* FirstDetailView.swift in Sources */,
+				492560BC2886A51D00E9E991 /* ProcessingView.swift in Sources */,
 				494D530F284E02E3001A73EA /* AppManager.swift in Sources */,
 				4930519126F345C40057BFED /* FirstView.swift in Sources */,
 				4919A40427450C4A00C794DF /* ItemListView.swift in Sources */,
+				49E4612D28AA3057009A4630 /* Request_Response.swift in Sources */,
 				49D1640A2701C30F00169409 /* ui-model.swift in Sources */,
+				491904FD28AB9C0A0087B3C6 /* TransactionDetailsView.swift in Sources */,
+				493AB9C0288FEE680056661D /* Signin_Response.swift in Sources */,
+				49DDCB09286AE11800853732 /* Utils.swift in Sources */,
 				4919A400274502A700C794DF /* HomeView.swift in Sources */,
+				493AB9BE288FCD090056661D /* Info_Response.swift in Sources */,
 				49393C58265E455400903192 /* PAPAY_Swift.xcdatamodeld in Sources */,
 				49D1640526FDCD0E00169409 /* SettingsView.swift in Sources */,
 			);
@@ -908,9 +1059,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				495B89BD286C5B6C0002E97E /* Utils.swift in Sources */,
+				49D273622872E32D00E89730 /* PaymentView.swift in Sources */,
+				495B89BC286C4FFD0002E97E /* ItemDetailsView.swift in Sources */,
 				496794222861C58800F0164E /* AppConfig.swift in Sources */,
+				4906B0CF2899201A00D20492 /* shopify_response.swift in Sources */,
 				49AB85BF2857264F0017D9AC /* ContentView.swift in Sources */,
+				49BEB15828811416002C2FEB /* product-json.swift in Sources */,
 				49AB85BD2857264F0017D9AC /* ClipApp.swift in Sources */,
+				49DE4F7D289B6AF300B70DDE /* papay-connect.swift in Sources */,
+				492DEAF32875688200DF3EA9 /* WebView.swift in Sources */,
+				49DE4F80289CC29200B70DDE /* product_table_structure.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1407,6 +1566,7 @@
 		};
 		49AC81AE285B21A500A8D05B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65A2EFFD25009A645755C461 /* Pods-widgetExtension.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -1414,7 +1574,7 @@
 				CODE_SIGN_ENTITLEMENTS = widgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = LQ32KV5FC4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = widget/Info.plist;
@@ -1439,6 +1599,7 @@
 		};
 		49AC81AF285B21A500A8D05B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 241452C861E857B206670BE2 /* Pods-widgetExtension.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -1446,7 +1607,7 @@
 				CODE_SIGN_ENTITLEMENTS = widgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Distribution: PAYMENT ASIA TECHNOLOGY LIMITED (LQ32KV5FC4)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = LQ32KV5FC4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = widget/Info.plist;
@@ -1545,6 +1706,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		492560B828865C5000E9E991 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		492560B928865C5000E9E991 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 492560B828865C5000E9E991 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		49393C56265E455400903192 /* PAPAY_Swift.xcdatamodeld */ = {

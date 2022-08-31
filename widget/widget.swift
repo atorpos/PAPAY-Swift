@@ -66,7 +66,7 @@ struct widgetEntryView : View {
                 .foregroundColor(Color(.white))
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(ContainerRelativeShape().fill(Color(.blue).opacity(0.8)))
+        .background(ContainerRelativeShape().fill(Color(.white).opacity(0.8)))
         
        
 //        Text()

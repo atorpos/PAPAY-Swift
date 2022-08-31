@@ -23,7 +23,7 @@ struct SettingsView: View {
                     Button(action: {
                     }) {
                         Text("Logout")
-                        Image(systemName: "power.circle")
+                        Image(systemName: "power.dotted")
                             .scaledToFit()
                         
                     }

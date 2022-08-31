@@ -7,19 +7,13 @@
 
 import SwiftUI
 import AVFoundation
+import ExytePopupView
+import CoreLocation
 
 class login_status: ObservableObject {
     @Published var logined = false
+    private var locationManager:CLLocationManager?
     
-    func updatetheresponse() {
-        let connect_model = PapayInfo()
-        if(connect_model.infopapay() == "200") {
-            logined = false
-        } else {
-            logined = true
-        }
-//        return logined
-    }
     func update_fast_track(response_code: String) -> Bool{
         if(Int(response_code) == 200){
             logined = false
@@ -49,7 +43,12 @@ struct HomeView: View {
     @State private var username: String = ""
     @State private var tid:String = ""
     @State private var password: String = ""
+    @State var tid_balance: Double = 0.00
+    @State var tid_name: String = ""
+    @State var tid_id: String = ""
+    @State var tid_channels: [String] = []
     @StateObject var from_response = login_status()
+    @StateObject var locationManager = LocationManager()
 //    @ObservedObject var login_process = login_status()
     
     init() {
@@ -71,23 +70,58 @@ struct HomeView: View {
                                 .foregroundColor(.white)
                                 .frame(maxWidth: .infinity, alignment: .center)
                         }
-                        Text(get_clip_info().merchant_name())
+//                        Text(get_clip_info().merchant_name())
+                        Text(tid_name)
                             .font(.system(size: 28)
                                 .weight(.bold))
                             .frame(maxWidth: .infinity, alignment: .center)
                             .foregroundColor(.white)
                             .onAppear{
                                 loggedin = checkiflogin()
+                                locationManager.requestLocation()
                             }
-                        Text("Terminal: \(get_clip_info().merchant_terminal())")
+                        if let location = locationManager.location {
+                            Text("Your Location: \(location.latitude), \(location.longitude)")
+                                .font(.system(size: 12)
+                                    .weight(.light))
+                                .frame(maxWidth: .infinity, alignment: .center)
+                                .foregroundColor(.white)
+                        }
+                        Text("Terminal: \(tid_id)")
                             .font(.system(size: 14)
                                 .weight(.light))
                             .frame(maxWidth: .infinity, alignment: .center)
                             .foregroundColor(.white)
-                            
+                        HStack(alignment: .center, spacing: 10){
+                            Spacer()
+                            ForEach(0 ..< tid_channels.count, id:\.self) { value in
+                                Image(tid_channels[value])
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 40, height: 40)
+    //                            Text("\(tid_channels[value])")
+                            }
+                            Spacer()
+                        }
                     }
                 }
-               balanceView()
+                Spacer()
+                VStack {
+                    HStack(){
+                        Text("Total Amount")
+                            .font(.system(size: 18, weight: .ultraLight, design: .rounded))
+                        Spacer()
+                    }
+                    HStack(alignment: .center, spacing: 10){
+                        Spacer()
+                        Text(String(format: "HKD $%.2f", tid_balance))
+                            .font(.system(size: 48, weight: .ultraLight, design: .rounded))
+                            .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
+                        Spacer()
+                    }
+                }
+                .padding()
+               bottomView()
             }
             
             .navigationTitle("Home")
@@ -95,10 +129,10 @@ struct HomeView: View {
             .toolbar {
                 ToolbarItemGroup(placement: .navigationBarTrailing) {
                     Button(action: {
+                        self.loggedin = self.logoutaction()
                     }) {
                         Image(systemName: "power.dotted")
                             .scaledToFit()
-                        
                     }
                 }
             }
@@ -129,7 +163,6 @@ struct HomeView: View {
                         Button(action: {
                             let papaylogin = PapayLogin(mid: username, tid: Int(tid) ?? 0, password: password)
                             let responst_code:String = papaylogin.loginpapay()
-                            print("response code \(responst_code)")
                             loggedin = loginresponse(response_code: responst_code)
                         }) {
                             HStack {
@@ -159,52 +192,109 @@ struct HomeView: View {
 
     }
     func checkiflogin()->Bool {
+        let appgroup:String = "group.com.paymentasia.papayswift"
         let connect_model = PapayInfo()
-        if(connect_model.infopapay() == "200") {
+        let connect_str = connect_model.infopapay_str()
+        let responsedata = Data(connect_str.utf8)
+        var responsecode: Int = 400
+        let decoder = JSONDecoder()
+        getUserLocation()
+        do {
+            let ser_response = try decoder.decode(InfoResponse.self, from: responsedata)
+            responsecode = Int(ser_response.response.code) ?? 400
+            self.tid_balance = Double(ser_response.payload.amount) ?? 0.00
+            self.tid_name = ser_response.payload.name
+            self.tid_id = ser_response.payload.terminal_id
+            for app_url  in ser_response.payload.screen_saver {
+                print(app_url)
+            }
+            self.tid_channels = UserDefaults(suiteName: appgroup)?.stringArray(forKey: "channels") ?? [String]()
+            for channel in tid_channels {
+                print(channel)
+            }
+        } catch {
+            print(String(describing: error))
+        }
+        
+        if(responsecode == 200) {
             return false
         } else {
             return true
         }
     }
     func loginresponse(response_code:String)->Bool {
+        let appgroup:String = "group.com.paymentasia.papayswift"
         if (Int(response_code) == 200) {
+            self.tid_name = UserDefaults(suiteName: appgroup)?.string(forKey: "merchant_name") ?? "Merchant Name"
+            self.tid_channels = UserDefaults(suiteName: appgroup)?.stringArray(forKey: "channels") ?? [String]()
             return false
         } else {
             return true
         }
     }
+    func logoutaction()->Bool {
+        let appgroup:String = "group.com.paymentasia.papayswift"
+        UserDefaults(suiteName: appgroup)?.removeObject(forKey: "qrcode")
+        UserDefaults(suiteName: appgroup)?.removeObject(forKey: "signature_secret")
+        UserDefaults(suiteName: appgroup)?.removeObject(forKey: "token")
+        UserDefaults.standard.removeObject(forKey: "qrcode")
+        UserDefaults.standard.removeObject(forKey: "signature_secret")
+        UserDefaults.standard.removeObject(forKey: "token")
+        
+        return true
+    }
+    func getUserLocation() {
+        locationManager.requestPermission()
+        locationManager.requestLocation()
+    }
+        
 }
 
-struct balanceView: View {
+
+struct bottomView: View {
+    @State var showqrwindow = false
     
     var body: some View {
-        
-        HStack{
-//            Text("balance")
-            Image(uiImage: generateQRCode(from: UserDefaults.standard.string(forKey: "qrcode") ?? ""))
-                .resizable()
-                .scaledToFit()
-                .aspectRatio(contentMode: .fit)
-                .frame(width: 100, height: 100)
-//                        .onAppear{
-//                            loggedin = checkiflogin()
-//                        }
+        VStack{
+            VStack(alignment: .center) {
+                Spacer()
+                Button("Show QRCode") {
+                    showqrwindow.toggle()
+                }
+                .buttonStyle(.plain)
+                .font(.system(size: 20, weight: .bold))
+                .frame(maxWidth: 240)
+                .padding(.vertical, 18)
+                .padding(.horizontal, 24)
+                .foregroundColor(.white)
+                .background(Color(hex: "296BA6"))
+                .cornerRadius(18)
+                Spacer()
+            }
         }
-        Spacer()
+        
+        .popup(isPresented: $showqrwindow, type: .default, closeOnTap: true, backgroundColor: .white.opacity(1)) {
+            PopupMiddle(isPresented: $showqrwindow)
+        }
     }
     
     private func generateQRCode(from string: String) -> UIImage {
         let context = CIContext()
         let filter  =   CIFilter.qrCodeGenerator()
         let data = Data(string.utf8)
+        let transform = CGAffineTransform(scaleX: 5, y: 5)
         filter.setValue(data, forKey: "inputMessage")
         
-        if let outputImage = filter.outputImage {
+        if let outputImage = filter.outputImage?.transformed(by: transform) {
             if let cgimg = context.createCGImage(outputImage, from: outputImage.extent){
                 return UIImage(cgImage: cgimg)
             }
         }
         return UIImage(systemName: "xmark.circle") ?? UIImage()
+    }
+    func showpopup()->Bool {
+        showqrwindow = true
+        return showqrwindow
     }
 }
 
@@ -225,6 +315,14 @@ class get_clip_info{
     func merchant_amount()->String {
         terminal_amount = UserDefaults(suiteName: appgroup)?.string(forKey: "amount") ?? "0.00"
         return terminal_amount
+    }
+}
+
+struct qrcodeview: View {
+    
+    var body: some View {
+        Text("texting")
+        
     }
 }
 

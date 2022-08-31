@@ -7,12 +7,17 @@
 
 import SwiftUI
 import WebKit
+import Combine
 
 struct SettingDetailsView: View {
     
     let words: String
     @State private var get_action_type:String = ""
     @State private var showingAlert = false
+    @State var showaction = ""
+//    @ObservedObject var trial_mag: MessageHandler
+//    @ObservedObject var trail_2 = MessageHandler()
+    @StateObject var trail_2 = MessageHandler()
 
     var body: some View {
         switch words {
@@ -32,8 +37,14 @@ struct SettingDetailsView: View {
                 Webview(url: URL(string: "https://www.paymentasia.com")!)
                     .navigationTitle(words)
             case "Merchant Portal":
-                Webview(url: URL(string: "https://s.awoz.co/js_test/")!)
-                    .navigationTitle(words)
+                VStack {
+                    Webview(url: URL(string: "https://s.awoz.co/js_test/")!)
+                    if let check_response = trail_2.set_type {
+                        Text(check_response)
+                    }
+                    
+                }
+                    .navigationTitle(trail_2.set_type)
             case "App Settings":
                 AppSettings()
             default:
@@ -48,6 +59,7 @@ struct SettingDetailsView: View {
 struct Webview: UIViewRepresentable {
 //    @Binding var text:String
     let url: URL
+//    @Binding var gettext: String = ""
 
     func makeUIView(context: UIViewRepresentableContext<Webview>) -> WKWebView {
         let handler = MessageHandler()
@@ -66,16 +78,54 @@ struct Webview: UIViewRepresentable {
         webview.load(request)
     }
     
+}
+class MessageHandler: NSObject, WKScriptMessageHandler, ObservableObject {
+    @Published var set_type: String = ""
+//    let env = SettingDetailsView(words: "")
+//    env.
     
-    class MessageHandler: NSObject, WKScriptMessageHandler {
-        var set_type: String = ""
-        func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-            let externalclass = getwebsignal()
+//    @ObservableObject var test_type: String = ""
+//    @Binding var gettext: String
+    func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
+        let externalclass = getwebsignal()
 //            let param1 = message.body as?String
 //            set_type = message.body as! String
-            externalclass.set_type = message.body as? String
-            print(externalclass.set_type ?? "nil")
-        }
+        externalclass.set_type = message.body as? String
+        print(externalclass.set_type ?? "nil")
+//        gettext = externalclass.set_type!
+        
+        self.set_type = self.export_value(exp_getvalue: externalclass.set_type!)
+        print(set_type)
+//        set_type = (message.body as? String)!
+//        test_type = (message.body as? String)!
         
     }
+    func export_value(exp_getvalue: String)->String {
+        let outputvalue: String
+        switch exp_getvalue {
+            case "touchid":
+                outputvalue = "pressed the touch id"
+            case"camera":
+                outputvalue = "press camera"
+                showUser(email: "show camera", name: "touch id")
+            default:
+                outputvalue = "nothing"
+        }
+        return outputvalue
+    }
+    private func showUser(email: String, name: String) {
+        print(email+name)
+//        let userDescription = "\(email) \(name)"
+//        let alertController = UIAlertController(title: "User", message: userDescription, preferredStyle: .alert)
+//        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+//
+//        let viewController = UIApplication.shared.windows.first!.rootViewController!
+//        viewController.present(alertController, animated: true, completion: nil)
+        
+//        let vc = UIHostingController(rootView: SettingsView())
+        NavigationLink(destination: SettingsView(), label: {Text("")})
+        
+//        present(alertController, animated: true)
+    }
+    
 }

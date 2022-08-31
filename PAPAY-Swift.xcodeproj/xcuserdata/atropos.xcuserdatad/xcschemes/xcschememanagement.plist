@@ -7,12 +7,12 @@
 		<key>Clip.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>16</integer>
+			<integer>17</integer>
 		</dict>
 		<key>PAPAY-Swift.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>15</integer>
+			<integer>18</integer>
 		</dict>
 		<key>PAPAY.xcscheme_^#shared#^_</key>
 		<dict>
@@ -32,7 +32,25 @@
 		<key>widgetExtension.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>17</integer>
+			<integer>19</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>49AB85B92857264F0017D9AC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>49AB85CA285726500017D9AC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>49AB85D4285726500017D9AC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

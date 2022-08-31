@@ -7,7 +7,8 @@
 
 import Foundation
 import SwiftUI
-import Combine
+//import Combine
+//import transactions
 
 class PapayLogin {
     var merchant_id: String = ""
@@ -34,15 +35,8 @@ class PapayLogin {
         
         connect_gateway.request_enpoint = login_url
         connect_gateway.request_payload = getPostString(params: payload)
-//        var response_string: String
-//        let request = URLRequest(url: URL(string: login_url)!)
+
         return connect_gateway.connect_backend()
-//        return connect_gateway.connect_back(withRequest: request, withCompletion: {response_string, error in
-//            if let error = error {
-//                print(error)
-//                return
-//            }
-//        }->Void)
         
     }
     func getPostString(params:[String:Any]) -> String
@@ -81,8 +75,269 @@ class PapayInfo {
         
         return response_values
     }
+    func infopapay_str()-> String {
+        let gottoken:String = UserDefaults(suiteName: appgroup)?.string(forKey: "token") ?? ""
+        let connect_gateway = PapayConnect()
+        let payload: [String: Any] = [
+            "token":gottoken
+        ]
+//        var response_values: String = ""
+        connect_gateway.request_enpoint = info_url
+        connect_gateway.request_payload = connect_gateway.getPostString(params: payload)
+        let returnstr = connect_gateway.connect_ret_string()
+        print("return var \(returnstr)")
+        
+        return returnstr
+        
+    }
+    
     
 }
+
+
+class PapayTransactions {
+    let info_url: String = PAPAYConfig().production_url+PAPAYConfig().transaction_ep
+    let appgroup:String = "group.com.paymentasia.papayswift"
+
+    func infopapay()-> String {
+        
+        let gottoken:String = UserDefaults(suiteName: appgroup)?.string(forKey: "token") ?? ""
+        let connect_gateway = PapayConnect()
+        let payload: [String: Any] = [
+            "token":gottoken
+        ]
+        connect_gateway.request_enpoint = info_url
+        connect_gateway.request_payload = connect_gateway.getPostString(params: payload)
+
+        let returnstr = connect_gateway.connect_ret_string()
+        print("return var \(returnstr)")
+        return returnstr
+    }
+}
+
+class PapayRequest {
+    let request_url:String = PAPAYConfig().production_url+PAPAYConfig().request_ep
+    let query_url:String = PAPAYConfig().production_url+PAPAYConfig().query_ep
+    let appgroup:String = "group.com.paymentasia.papayswift"
+    var request_amount:String = ""
+    var the_qrcode:String = ""
+    var request_reference:String = ""
+    func requestpapay()->String {
+        
+        let gottoken:String = UserDefaults(suiteName: appgroup)?.string(forKey: "token") ?? ""
+        let connect_gateway = PapayConnect()
+        let payload:[String:Any] = [
+            "token":gottoken,
+            "amount":request_amount,
+            "bar_code":the_qrcode,
+            "currency":"HKD"
+        ]
+        connect_gateway.request_enpoint = request_url
+        connect_gateway.request_payload = connect_gateway.getPostString(params: payload)
+        
+        let returnstr = connect_gateway.connect_ret_string()
+//        print("return var \(returnstr)")
+        return returnstr
+        
+    }
+    func querypapay()->String {
+        let gottoken:String = UserDefaults(suiteName: appgroup)?.string(forKey: "token") ?? ""
+        let connect_gateway = PapayConnect()
+        let query_payload:[String:Any] = [
+            "token":gottoken,
+            "request_reference":request_reference
+        ]
+        connect_gateway.request_enpoint = query_url
+        connect_gateway.request_payload = connect_gateway.getPostString(params: query_payload)
+        let returnstr = connect_gateway.connect_ret_string()
+//        print("return query var \(returnstr)")
+        return returnstr
+        
+    }
+    
+}
+
+class PapayConnect {
+    @Published var request_enpoint: String = ""
+    @Published var request_payload: String = ""
+//    var transactions = [transaction_rec]()
+    
+    struct ResponseStructure: Codable{
+        var request:String
+        var response:String
+        var payload:String
+    }
+    
+    func connect_backend()->String {
+        let payload = request_payload.data(using: .utf8)
+//        var response_string = Direct_esponse()
+        var request = URLRequest(url: URL(string: request_enpoint)!)
+        var req_response: String = ""
+        let appgroup:String = "group.com.paymentasia.papayswift"
+        let sem = DispatchSemaphore.init(value: 0)
+//        print(request_enpoint)
+        request.httpMethod = "POST"
+//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.httpBody = payload
+        
+        URLSession.shared.dataTask(with: request, completionHandler: {(data: Data?, response: URLResponse?, error: Error?) in
+            defer{sem.signal()}
+            guard error == nil else { print(error!.localizedDescription); return}
+            guard let data = data else {print("Empty data"); return}
+            let json = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary
+            print(json as Any)
+            let json_response = json?["response"] as? NSDictionary
+            req_response = json_response?["code"] as! String
+            if(json_response?["code"] as! String == "200"){
+                let json_payload = json?["payload"] as?NSDictionary
+                switch self.request_enpoint {
+                    case "https://gateway.pa-sys.com/papay/information":
+                        print("info page")
+                        UserDefaults(suiteName: appgroup)?.set(json_payload?["amount"] as! String, forKey: "amount")
+                        let lasttimetime = json_payload?["last_transaction_time"]
+                        UserDefaults(suiteName: appgroup)?.set(lasttimetime, forKey: "last_transaction_time")
+                        UserDefaults(suiteName: appgroup)?.set(json_payload?["merchant_store_address"] as! String, forKey: "merchant_store_address")
+                        UserDefaults(suiteName: appgroup)?.set(json_payload?["name"] as! String, forKey: "merchant_name")
+                        UserDefaults(suiteName: appgroup)?.set(json_payload?["terminal_id"] as! String, forKey: "terminal_id")
+                    case "https://gateway.pa-sys.com/papay/sign-in":
+//                        print(json_payload?["provider"]!)
+                        UserDefaults.standard.set(json_payload?["qrcode"] as! String, forKey: "qrcode")
+                        UserDefaults.standard.set(json_payload?["signature_secret"] as! String, forKey: "signature_secret")
+                        UserDefaults.standard.set(json_payload?["token"] as! String, forKey: "token")
+                        UserDefaults(suiteName: appgroup)?.set(json_payload?["qrcode"] as! String, forKey: "qrcode")
+                        UserDefaults(suiteName: appgroup)?.set(json_payload?["signature_secret"] as! String, forKey: "signature_secret")
+                        UserDefaults(suiteName: appgroup)?.set(json_payload?["token"] as! String, forKey: "token")
+                        UserDefaults(suiteName: appgroup)?.set(json_payload?["merchant_name"] as! String, forKey: "merchant_name")
+                        UserDefaults(suiteName: appgroup)?.set(json_payload?["provider"], forKey: "channels")
+                    default:
+                        print("no one")
+                }
+//
+            } else {
+//                req_response = json_response?["code"] as! String
+                UserDefaults(suiteName: appgroup)?.removeObject(forKey: "qrcode")
+                UserDefaults(suiteName: appgroup)?.removeObject(forKey: "signature_secret")
+                UserDefaults(suiteName: appgroup)?.removeObject(forKey: "token")
+                UserDefaults.standard.removeObject(forKey: "qrcode")
+                UserDefaults.standard.removeObject(forKey: "signature_secret")
+                UserDefaults.standard.removeObject(forKey: "token")
+            }
+            
+        }).resume()
+        sem.wait()
+        
+        return req_response
+    }
+    
+    func connect_ret_string()->String {
+        let payload = request_payload.data(using: .utf8)
+        var request = URLRequest(url: URL(string: request_enpoint)!)
+        let sem = DispatchSemaphore.init(value: 0)
+        var rtstring:String!
+        
+        request.httpMethod = "POST"
+        request.httpBody = payload
+        
+        URLSession.shared.dataTask(with: request, completionHandler: {(data: Data?, response: URLResponse?, error: Error?) in
+            defer{sem.signal()}
+            guard error == nil else { print(error!.localizedDescription); return}
+            guard let data = data else {print("Empty data"); return}
+            rtstring = String(decoding: data, as: UTF8.self)
+        }).resume()
+        sem.wait()
+        
+        return rtstring
+        
+    }
+    
+    func connect_back(withRequest request: URLRequest, withCompletion completion: @escaping (String?, Error?)->Void){
+        let payload = request_payload.data(using: .utf8)
+        var request = URLRequest(url: URL(string: request_enpoint)!)
+        request.httpMethod = "POST"
+        request.httpBody = payload
+        let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+            if error != nil {
+                completion(nil, error)
+                return
+            }
+            else if let data = data {
+                do {
+                    guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] else {completion(nil, nil);return}
+//                    guard let details = json["response"]["code"] as? String else {completion(nil, nil); return}
+                    completion(json as AnyObject as? String, nil)
+                }
+                catch {
+                    completion(nil, error)
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    func taketotherplace() -> Alert {
+        let set_alert = Alert(
+            title: Text("Testing"), message: Text("Message"), dismissButton: .default(Text("OK"), action: {})
+        )
+        return set_alert
+        
+    }
+    
+    func getPostString(params:[String:Any]) -> String
+        {
+            var data = [String]()
+            for(key, value) in params
+            {
+                data.append(key + "=\(value)")
+            }
+            return data.map { String($0) }.joined(separator: "&")
+        }
+    
+}
+
+class ShopifyConnection {
+    let product_url: String = "https://vigorgems.myshopify.com/admin/api/2022-07/products.json"
+    
+    func connect_shopify()->String {
+        let connect_shopify = ShopConnect()
+        connect_shopify.request_enpoint = product_url
+        connect_shopify.request_payload = ""
+        
+        let returnstr = connect_shopify.connect_ret_string()
+        
+        return returnstr
+        
+    }
+    
+    
+}
+
+class ShopConnect {
+    @Published var request_enpoint: String = ""
+    @Published var request_payload: String = ""
+    
+    func connect_ret_string()->String {
+        let payload = request_payload.data(using: .utf8)
+        var request = URLRequest(url: URL(string: request_enpoint)!)
+        let sem = DispatchSemaphore.init(value: 0)
+        var rtstring:String!
+        
+        request.httpMethod = "GET"
+        request.httpBody = payload
+        request.addValue("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", forHTTPHeaderField: "X-Shopify-Access-Token")
+        
+        URLSession.shared.dataTask(with: request, completionHandler: {(data: Data?, response: URLResponse?, error: Error?) in
+            defer{sem.signal()}
+            guard error == nil else { print(error!.localizedDescription); return}
+            guard let data = data else {print("Empty data"); return}
+            rtstring = String(decoding: data, as: UTF8.self)
+        }).resume()
+        sem.wait()
+        
+        return rtstring
+        
+    }
+}
+
 
 
 class PapayGeneral {
@@ -144,118 +399,4 @@ class Direct_esponse{
 //        let ds_response: DS_response = try! decoder.decode(DS_response.self, from: direct_token.data(using: .utf8)!)
 //        print(ds_response.response)
     }
-}
-
-class PapayConnect {
-    @Published var request_enpoint: String = ""
-    @Published var request_payload: String = ""
-    
-    struct ResponseStructure: Codable{
-        var request:String
-        var response:String
-        var payload:String
-    }
-    
-    func connect_backend()->String {
-        let payload = request_payload.data(using: .utf8)
-        var response_string = Direct_esponse()
-        var request = URLRequest(url: URL(string: request_enpoint)!)
-        var req_response: String = ""
-        let appgroup:String = "group.com.paymentasia.papayswift"
-        let sem = DispatchSemaphore.init(value: 0)
-//        print(request_enpoint)
-        request.httpMethod = "POST"
-//        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.httpBody = payload
-        
-        URLSession.shared.dataTask(with: request, completionHandler: {(data: Data?, response: URLResponse?, error: Error?) in
-            defer{sem.signal()}
-            guard error == nil else { print(error!.localizedDescription); return}
-            guard let data = data else {print("Empty data"); return}
-            
-            let json = try? JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary
-            print(json)
-            let json_response = json?["response"] as? NSDictionary
-            req_response = json_response?["code"] as! String
-            if(json_response?["code"] as! String == "200"){
-//                    print(json_response?["code"] as! String)
-                let json_payload = json?["payload"] as?NSDictionary
-                
-                switch self.request_enpoint {
-                    case "https://gateway.pa-sys.com/papay/information":
-                        print("info page")
-                        UserDefaults(suiteName: appgroup)?.set(json_payload?["amount"] as! String, forKey: "amount")
-                        UserDefaults(suiteName: appgroup)?.set(json_payload?["last_transaction_time"] as! String, forKey: "last_transaction_time")
-                        UserDefaults(suiteName: appgroup)?.set(json_payload?["merchant_store_address"] as! String, forKey: "merchant_store_address")
-                        UserDefaults(suiteName: appgroup)?.set(json_payload?["name"] as! String, forKey: "merchant_name")
-                        UserDefaults(suiteName: appgroup)?.set(json_payload?["terminal_id"] as! String, forKey: "terminal_id")
-                    case "https://gateway.pa-sys.com/papay/sign-in":
-                        print(json_payload?["token"]!)
-                        UserDefaults.standard.set(json_payload?["qrcode"] as! String, forKey: "qrcode")
-                        UserDefaults.standard.set(json_payload?["signature_secret"] as! String, forKey: "signature_secret")
-                        UserDefaults.standard.set(json_payload?["token"] as! String, forKey: "token")
-                        UserDefaults(suiteName: appgroup)?.set(json_payload?["qrcode"] as! String, forKey: "qrcode")
-                        UserDefaults(suiteName: appgroup)?.set(json_payload?["signature_secret"] as! String, forKey: "signature_secret")
-                        UserDefaults(suiteName: appgroup)?.set(json_payload?["token"] as! String, forKey: "token")
-                    default:
-                        print("no one")
-                }
-//
-            } else {
-//                req_response = json_response?["code"] as! String
-                UserDefaults(suiteName: appgroup)?.removeObject(forKey: "qrcode")
-                UserDefaults(suiteName: appgroup)?.removeObject(forKey: "signature_secret")
-                UserDefaults(suiteName: appgroup)?.removeObject(forKey: "token")
-                UserDefaults.standard.removeObject(forKey: "qrcode")
-                UserDefaults.standard.removeObject(forKey: "signature_secret")
-                UserDefaults.standard.removeObject(forKey: "token")
-            }
-            
-        }).resume()
-        sem.wait()
-        
-        return req_response
-    }
-    func connect_back(withRequest request: URLRequest, withCompletion completion: @escaping (String?, Error?)->Void){
-        let payload = request_payload.data(using: .utf8)
-        var request = URLRequest(url: URL(string: request_enpoint)!)
-        request.httpMethod = "POST"
-        request.httpBody = payload
-        let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-            if error != nil {
-                completion(nil, error)
-                return
-            }
-            else if let data = data {
-                do {
-                    guard let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String:Any] else {completion(nil, nil);return}
-//                    guard let details = json["response"]["code"] as? String else {completion(nil, nil); return}
-                    completion(json as AnyObject as? String, nil)
-                }
-                catch {
-                    completion(nil, error)
-                }
-            }
-        }
-        task.resume()
-    }
-    
-    func taketotherplace() -> Alert {
-        let set_alert = Alert(
-            title: Text("Testing"), message: Text("Message"), dismissButton: .default(Text("OK"), action: {})
-        )
-        return set_alert
-        
-    }
-    
-    func getPostString(params:[String:Any]) -> String
-        {
-            var data = [String]()
-            for(key, value) in params
-            {
-                data.append(key + "=\(value)")
-            }
-            return data.map { String($0) }.joined(separator: "&")
-        }
-    
 }

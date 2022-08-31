@@ -42,7 +42,7 @@ struct LoginView: View {
                         .multilineTextAlignment(.center)
                     Button(action: {
                         let papaylogin = PapayLogin(mid: username, tid: Int(tid) ?? 0, password: password)
-                        var responst_code:String = papaylogin.loginpapay()
+                        let responst_code:String = papaylogin.loginpapay()
                         print("response code \(responst_code)")
                     }) {
                         HStack {
