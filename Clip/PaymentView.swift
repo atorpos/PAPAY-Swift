@@ -31,9 +31,9 @@ struct PaymentView: View {
     }
     private func runapplewallet(){
         let url = URL(string: "http://admin.mg.awoz.co/wallets/sample01.pkpass")
-//        UIApplication.shared.open(url!)
+        UIApplication.shared.open(url!)
 //        FileDownloader.loadFileSync(url: url!) {(path, error) in
-            print("test")
+//            print("test")
 
         }
 }

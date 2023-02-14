@@ -23,18 +23,21 @@ struct Response_request:Codable {
     let time: String
 }
 struct Payload_request:Codable {
-    let type: String
-    let provider: String
-    let request_reference: String
-    let merchant_reference: String
+    let type: String?
+    let provider: String?
+    let request_reference: String?
+    let merchant_reference: String?
     let amount: StringOrDouble?
     let currency: String
     let status: String?
     let remark: String?
     let merchant_store_address: String?
     let transaction_status: String?
-    let created_time: Int
-    let completed_time:Int
+    let created_time: Int?
+    let completed_time:Int?
+    let big_pic_url:String?
+    let pic_url:String?
+    let qr_code_string: String?
     
     //    enum type of string or double
         enum StringOrDouble: Codable {
@@ -51,6 +54,7 @@ struct Payload_request:Codable {
                     self = .string(string)
                     return
                 }
+            
                 throw Error.couldNotFindStringOrDouble
             }
             enum Error: Swift.Error {

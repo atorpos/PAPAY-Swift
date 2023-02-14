@@ -64,6 +64,12 @@ struct TransactionsView: View {
                                             .foregroundColor(.green)
                                             .scaledToFit()
                                             .frame(width: 50, height: 50)
+                                    } else if(transaction_status[each] == 4){
+                                        Image(systemName: "goforward")
+                                            .font(.system(size: 40, weight: .semibold))
+                                            .foregroundColor(.blue)
+                                            .scaledToFit()
+                                            .frame(width: 50, height: 50)
                                     } else {
                                         Image(systemName: "multiply.circle")
                                             .font(.system(size: 40, weight: .semibold))

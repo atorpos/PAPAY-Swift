@@ -91,11 +91,17 @@ class MessageHandler: NSObject, WKScriptMessageHandler, ObservableObject {
 //            let param1 = message.body as?String
 //            set_type = message.body as! String
         externalclass.set_type = message.body as? String
-        print(externalclass.set_type ?? "nil")
+//        print(externalclass.set_type ?? "nil")
 //        gettext = externalclass.set_type!
         
         self.set_type = self.export_value(exp_getvalue: externalclass.set_type!)
         print(set_type)
+//        if(set_type == "touchid"){
+//            print("one touch id")
+//        } else if(set_type == "camera") {
+//            print("two camera")
+//        }
+//        print(set_type)
 //        set_type = (message.body as? String)!
 //        test_type = (message.body as? String)!
         
@@ -104,9 +110,9 @@ class MessageHandler: NSObject, WKScriptMessageHandler, ObservableObject {
         let outputvalue: String
         switch exp_getvalue {
             case "touchid":
-                outputvalue = "pressed the touch id"
+                outputvalue = "pressed the touch id export value"
             case"camera":
-                outputvalue = "press camera"
+                outputvalue = "pressed camera export value"
                 showUser(email: "show camera", name: "touch id")
             default:
                 outputvalue = "nothing"
@@ -123,9 +129,15 @@ class MessageHandler: NSObject, WKScriptMessageHandler, ObservableObject {
 //        viewController.present(alertController, animated: true, completion: nil)
         
 //        let vc = UIHostingController(rootView: SettingsView())
-        NavigationLink(destination: SettingsView(), label: {Text("")})
+//        NavigationLink(destination: SettingsView(), label: {Text("")})
         
 //        present(alertController, animated: true)
     }
     
 }
+
+//extension View:WKScriptMessageHandler {
+//
+//
+//
+//}

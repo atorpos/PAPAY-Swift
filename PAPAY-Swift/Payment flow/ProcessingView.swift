@@ -171,8 +171,8 @@ struct ProcessingView: View {
             do {
                 let ser_response = try decoder.decode(RequestResponse.self, from: responsedata)
                 print("checkout \(String(describing: ser_response.payload.transaction_status))")
-                transaction_status = Int(ser_response.payload.transaction_status!)!
-                transaction_request_response = ser_response.payload.request_reference
+                transaction_status = Int(ser_response.payload.transaction_status ?? "2")!
+                transaction_request_response = ser_response.payload.request_reference ?? "nan"
             } catch {
                 print(String(describing: error))
             }
@@ -191,7 +191,7 @@ struct ProcessingView: View {
                 transaction_status = Int(ser_response.payload.status!)!
                 print("Address \(String(describing: ser_response.payload.merchant_store_address))")
             } catch {
-                print(String(describing: error))
+                print("error: \(String(describing: error))")
             }
         }
         startQuery = true

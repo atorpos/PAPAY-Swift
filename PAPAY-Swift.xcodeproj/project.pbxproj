@@ -77,7 +77,8 @@
 		49AC81A4285B21A400A8D05B /* widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AC81A3285B21A400A8D05B /* widget.swift */; };
 		49AC81A9285B21A500A8D05B /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 49AC81A5285B21A400A8D05B /* widget.intentdefinition */; };
 		49AC81AA285B21A500A8D05B /* widget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 49AC81A5285B21A400A8D05B /* widget.intentdefinition */; };
-		49AC81AD285B21A500A8D05B /* widgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 49AC819F285B21A400A8D05B /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		49AC81AD285B21A500A8D05B /* widgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 49AC819F285B21A400A8D05B /* widgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		49AF9E9528C0AA76003CD855 /* OneTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49AF9E9428C0AA76003CD855 /* OneTimeView.swift */; };
 		49BCAECB28856E7D00ACFAE2 /* camViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BCAECA28856E7D00ACFAE2 /* camViewModel.swift */; };
 		49BEB15728811416002C2FEB /* product-json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BEB15628811416002C2FEB /* product-json.swift */; };
 		49BEB15828811416002C2FEB /* product-json.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BEB15628811416002C2FEB /* product-json.swift */; };
@@ -88,6 +89,8 @@
 		49D2735F2872CE8300E89730 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49393C4F265E455400903192 /* Assets.xcassets */; };
 		49D273602872CE8700E89730 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49393C4F265E455400903192 /* Assets.xcassets */; };
 		49D273622872E32D00E89730 /* PaymentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D273612872E32D00E89730 /* PaymentView.swift */; };
+		49DB0CD028D44EB700FB1071 /* clan.caf in Resources */ = {isa = PBXBuildFile; fileRef = 49DB0CCF28D44EB700FB1071 /* clan.caf */; };
+		49DB0CD228D4558200FB1071 /* beep.caf in Resources */ = {isa = PBXBuildFile; fileRef = 49DB0CD128D4558100FB1071 /* beep.caf */; };
 		49DDCB07286ADED600853732 /* Popups.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDCB06286ADED600853732 /* Popups.swift */; };
 		49DDCB09286AE11800853732 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDCB08286AE11800853732 /* Utils.swift */; };
 		49DDCB0B286AF2D300853732 /* BalanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DDCB0A286AF2D200853732 /* BalanceView.swift */; };
@@ -148,15 +151,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		49393C94265E467300903192 /* Embed App Extensions */ = {
+		49393C94265E467300903192 /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				49AC81AD285B21A500A8D05B /* widgetExtension.appex in Embed App Extensions */,
+				49AC81AD285B21A500A8D05B /* widgetExtension.appex in Embed Foundation Extensions */,
 			);
-			name = "Embed App Extensions";
+			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4943D5102856DAFB009FAF39 /* Embed App Clips */ = {
@@ -249,6 +252,7 @@
 		49AC81A3285B21A400A8D05B /* widget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = widget.swift; sourceTree = "<group>"; };
 		49AC81A5285B21A400A8D05B /* widget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = widget.intentdefinition; sourceTree = "<group>"; };
 		49AC81A8285B21A500A8D05B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49AF9E9428C0AA76003CD855 /* OneTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneTimeView.swift; sourceTree = "<group>"; };
 		49BCAECA28856E7D00ACFAE2 /* camViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = camViewModel.swift; sourceTree = "<group>"; };
 		49BEB15628811416002C2FEB /* product-json.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "product-json.swift"; sourceTree = "<group>"; };
 		49C97E7C2759F6D100373591 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "Base.lproj/Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -256,6 +260,8 @@
 		49D1640626FDCD4000169409 /* TransactionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsView.swift; sourceTree = "<group>"; };
 		49D164092701C30F00169409 /* ui-model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ui-model.swift"; sourceTree = "<group>"; };
 		49D273612872E32D00E89730 /* PaymentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentView.swift; sourceTree = "<group>"; };
+		49DB0CCF28D44EB700FB1071 /* clan.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = clan.caf; sourceTree = "<group>"; };
+		49DB0CD128D4558100FB1071 /* beep.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = beep.caf; sourceTree = "<group>"; };
 		49DDCB06286ADED600853732 /* Popups.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popups.swift; sourceTree = "<group>"; };
 		49DDCB08286AE11800853732 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		49DDCB0A286AF2D200853732 /* BalanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceView.swift; sourceTree = "<group>"; };
@@ -354,6 +360,7 @@
 				495B89B9286C482F0002E97E /* ScannerView.swift */,
 				492560BB2886A51D00E9E991 /* ProcessingView.swift */,
 				49637D422880132A005D5831 /* iPhoneKeypadView.swift */,
+				49AF9E9428C0AA76003CD855 /* OneTimeView.swift */,
 			);
 			path = "Payment flow";
 			sourceTree = "<group>";
@@ -407,6 +414,8 @@
 		49393C3F265E455300903192 = {
 			isa = PBXGroup;
 			children = (
+				49DB0CD128D4558100FB1071 /* beep.caf */,
+				49DB0CCF28D44EB700FB1071 /* clan.caf */,
 				49523ED0285C91B9007102CA /* widgetExtension.entitlements */,
 				49512C0326F0442700EE07AF /* Config */,
 				4933355726DE388800F30AD8 /* Model */,
@@ -462,8 +471,7 @@
 				499E05E727426C6300010CDB /* SettingDetailsView.swift */,
 				492AF708286467F500653F83 /* AppSettings.swift */,
 				492560C02886B92900E9E991 /* Transactions */,
-				4930519026F345C40057BFED /* FirstView.swift */,
-				4930519226F4826B0057BFED /* FirstDetailView.swift */,
+				49674AFA28D8290F00B071B8 /* Weeklyview */,
 				49393C4F265E455400903192 /* Assets.xcassets */,
 				49393C54265E455400903192 /* Persistence.swift */,
 				49393C59265E455400903192 /* Info.plist */,
@@ -529,6 +537,15 @@
 				49DDCB06286ADED600853732 /* Popups.swift */,
 			);
 			path = Popups;
+			sourceTree = "<group>";
+		};
+		49674AFA28D8290F00B071B8 /* Weeklyview */ = {
+			isa = PBXGroup;
+			children = (
+				4930519026F345C40057BFED /* FirstView.swift */,
+				4930519226F4826B0057BFED /* FirstDetailView.swift */,
+			);
+			path = Weeklyview;
 			sourceTree = "<group>";
 		};
 		498D8DB62887D8C20005801D /* Main Page */ = {
@@ -600,7 +617,7 @@
 				49393C44265E455300903192 /* Sources */,
 				49393C45265E455300903192 /* Frameworks */,
 				49393C46265E455300903192 /* Resources */,
-				49393C94265E467300903192 /* Embed App Extensions */,
+				49393C94265E467300903192 /* Embed Foundation Extensions */,
 				9D215D6DBDF3AEEB3F3EAEB3 /* [CP] Embed Pods Frameworks */,
 				4943D5102856DAFB009FAF39 /* Embed App Clips */,
 			);
@@ -735,7 +752,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					49393C47265E455300903192 = {
 						CreatedOnToolsVersion = 12.5;
@@ -800,8 +817,10 @@
 				49393C50265E455400903192 /* Assets.xcassets in Resources */,
 				4938602E28631A78003BE54E /* pa_logo_1200x180.png in Resources */,
 				49C97E792759F6CC00373591 /* Launch Screen.storyboard in Resources */,
+				49DB0CD228D4558200FB1071 /* beep.caf in Resources */,
 				4938603128631A78003BE54E /* OpeningPG_logo.png in Resources */,
 				49FCD5932733CF17008535ED /* GoogleService-Info.plist in Resources */,
+				49DB0CD028D44EB700FB1071 /* clan.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -996,6 +1015,7 @@
 				49512C0126F0442000EE07AF /* AppConfig.swift in Sources */,
 				49393C55265E455400903192 /* Persistence.swift in Sources */,
 				492560BF2886B92300E9E991 /* TransactionSearchView.swift in Sources */,
+				49AF9E9528C0AA76003CD855 /* OneTimeView.swift in Sources */,
 				496EA80A274F314D00B6F208 /* calculate-model.swift in Sources */,
 				49DDCB0B286AF2D300853732 /* BalanceView.swift in Sources */,
 				49BCAECB28856E7D00ACFAE2 /* camViewModel.swift in Sources */,
@@ -1276,11 +1296,13 @@
 				CODE_SIGN_ENTITLEMENTS = "PAPAY-Swift/PAPAY-Swift.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"PAPAY-Swift/Preview Content\"";
 				DEVELOPMENT_TEAM = LQ32KV5FC4;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = LQ32KV5FC4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "PAPAY-Swift/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1289,6 +1311,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.paymentasia.papayswift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "papayswift development";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "papayswift development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1304,11 +1327,12 @@
 				CODE_SIGN_ENTITLEMENTS = "PAPAY-Swift/PAPAY-Swift.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Distribution: PAYMENT ASIA TECHNOLOGY LIMITED (LQ32KV5FC4)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"PAPAY-Swift/Preview Content\"";
 				DEVELOPMENT_TEAM = LQ32KV5FC4;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "PAPAY-Swift/Info.plist";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.business";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1419,13 +1443,15 @@
 				CODE_SIGN_ENTITLEMENTS = Clip/Clip.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Clip/Preview Content\"";
 				DEVELOPMENT_TEAM = LQ32KV5FC4;
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = LQ32KV5FC4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Clip/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "PAPAY-Swift";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1440,6 +1466,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.paymentasia.papayswift.Clip;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "papay swift clip dev";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "papay swift clip dev";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1455,13 +1482,14 @@
 				CODE_SIGN_ENTITLEMENTS = Clip/Clip.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Distribution: PAYMENT ASIA TECHNOLOGY LIMITED (LQ32KV5FC4)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Clip/Preview Content\"";
 				DEVELOPMENT_TEAM = LQ32KV5FC4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Clip/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "PAPAY-Swift";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1574,7 +1602,7 @@
 				CODE_SIGN_ENTITLEMENTS = widgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = LQ32KV5FC4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = widget/Info.plist;
@@ -1607,7 +1635,7 @@
 				CODE_SIGN_ENTITLEMENTS = widgetExtension.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Distribution: PAYMENT ASIA TECHNOLOGY LIMITED (LQ32KV5FC4)";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = LQ32KV5FC4;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = widget/Info.plist;

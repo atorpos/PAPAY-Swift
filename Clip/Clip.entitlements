@@ -4,8 +4,8 @@
 <dict>
 	<key>com.apple.developer.associated-domains</key>
 	<array>
-		<string>webcredentials:*.pa-sys.com</string>
-		<string>appclips:*.pa-sys.com</string>
+		<string>appclips:www.papay.com.hk</string>
+		<string>webcredentials:www.papay.com.hk</string>
 	</array>
 	<key>com.apple.developer.parent-application-identifiers</key>
 	<array>

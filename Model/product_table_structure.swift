@@ -11,5 +11,5 @@ struct shopify_items {
     let title: String
     let img_src:String
     let descriptions: String
-    
+
 }

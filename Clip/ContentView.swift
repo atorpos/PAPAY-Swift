@@ -12,7 +12,11 @@ struct ContentView: View {
     let catlog = [
         "genora","espresso","bluebottles","icecoffee","lamazcco","lousanna"
     ]
+    @State var catlog_img = []
     @State var product_items = []
+    @State var catlog_pid = []
+    @State var catlog_title = []
+    @State var catlog_price = []
     @State var product_array_no = 0
     
     let columns = [
@@ -27,7 +31,7 @@ struct ContentView: View {
                     Text("Hello, world!")
                         .padding()
                     Text(gettoken())
-                    Text("Total items \(product_items.count)")
+                    Text("Total items \(catlog_img.count)")
 //                    Text(get_productlist())
                     
                 }
@@ -35,16 +39,48 @@ struct ContentView: View {
                     LazyVGrid(columns: columns) {
                         ForEach(0...product_array_no, id: \.self){ no_of_item in
                             NavigationLink{
-                                ItemDetailsView(words: catlog[no_of_item])
+                                if(catlog_pid.count != 0) {
+                                    ItemDetailsView(words: catlog_pid[no_of_item] as! String)
+                                }
                             } label: {
                                 ZStack {
-                                    Image(catlog[no_of_item])
-                                        .aspectRatio(contentMode: .fit)
-//                                    Text(catlog[no_of_item])
+                                    if(catlog_img.count != 0){
+                                        VStack{
+                                            AsyncImage(url: URL(string: catlog_img[no_of_item] as! String)) { phase in
+                                                if let image = phase.image {
+                                                    image
+                                                        .resizable()
+                                                        .aspectRatio(contentMode: .fit)
+                                                        .cornerRadius(20)
+                                                } else if phase.error != nil {
+                                                    Text("Loading")
+                                                } else {
+                                                    Image(catlog[no_of_item])
+                                                        .resizable()
+                                                        .aspectRatio(contentMode: .fill)
+                                                }
+                                            }.frame(width: 160, height: 200, alignment: .center)
+                                        }
+                                    } else {
+                                        Image(catlog[no_of_item])
+                                            .aspectRatio(contentMode: .fit)
+                                    }
+//                                        .frame(width: 200, height: 250)
+//                                        .clipShape(RoundedRectangle(cornerRadius: 25))
+//                                    Image(catlog[no_of_item])
+//                                        .aspectRatio(contentMode: .fit)
+                                    
                                 }
-                                .frame(width: 200, height: 250)
-                                .cornerRadius(20)
+                                .onAppear {
+                                    if catlog_img.count == 0 {
+                                        DispatchQueue.main.async {
+                                            get_array()
+                                        }
+                                    }
+                                    
+                                }
 //                                Color.orange.frame(width: 200, height: 250)
+                                
                                 
                             }
                         }
@@ -55,7 +91,7 @@ struct ContentView: View {
                 Spacer()
             }
             .navigationTitle("Payment Asia")
-            .onAppear(perform: get_array)
+//            .onAppear(perform: get_array)
 //            .onAppear(perform: fetchData{(dict, error) in
 //                print(dict)
 //            })
@@ -73,12 +109,32 @@ struct ContentView: View {
             for items in ser_response.products {
                 let product_item = [shopify_items(title: items.title, img_src: items.image.src, descriptions: items.body_html)]
                 product_items.append(product_item)
+                let product_img = items.image.src
+                catlog_img.append(product_img)
+                let product_code = String(items.id)
+                catlog_pid.append(product_code)
+                let product_title = items.title
+                catlog_title.append(product_title)
+//                var product_price = "0"
+//                for variables in items.variants {
+//                    product_price = String(variables.price)
+//                }
+                let product_price = String(items.variants[0].price)
+                catlog_price.append(product_price)
             }
+            print(catlog_pid)
+            print(catlog_img)
+            print(catlog_price)
         } catch {
             print(String(describing: error))
         }
         product_array_no = product_items.count - 1
-        print("product array \(product_items[0])")
+//        for (key, arr) in product_items {
+//            let imgsrc = arr["img_src"]
+//            let title = arr["title"]
+//            print ("the key \(key), and image is \(imgsrc)")
+//        }
+//        print("product array \(product_items[0])")
     }
 }
 

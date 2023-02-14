@@ -118,6 +118,7 @@ class PapayTransactions {
 class PapayRequest {
     let request_url:String = PAPAYConfig().production_url+PAPAYConfig().request_ep
     let query_url:String = PAPAYConfig().production_url+PAPAYConfig().query_ep
+    let onetime_url:String = PAPAYConfig().production_url+PAPAYConfig().onetime_ep
     let appgroup:String = "group.com.paymentasia.papayswift"
     var request_amount:String = ""
     var the_qrcode:String = ""
@@ -140,6 +141,25 @@ class PapayRequest {
         return returnstr
         
     }
+    func onetimerequest(requestChannel: String)->String {
+        
+        let gottoken:String = UserDefaults(suiteName: appgroup)?.string(forKey: "token") ?? ""
+        let connect_gateway = PapayConnect()
+        let payload:[String:Any] = [
+            "token":gottoken,
+            "currency":"HKD",
+            "amount":request_amount,
+            "network":requestChannel
+        ]
+        connect_gateway.request_enpoint = onetime_url
+        connect_gateway.request_payload = connect_gateway.getPostString(params: payload)
+        
+        let returnstr = connect_gateway.connect_ret_string()
+        return returnstr
+        
+    }
+    
+    
     func querypapay()->String {
         let gottoken:String = UserDefaults(suiteName: appgroup)?.string(forKey: "token") ?? ""
         let connect_gateway = PapayConnect()

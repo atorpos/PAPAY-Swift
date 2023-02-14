@@ -14,6 +14,8 @@ struct ScannerView: View {
     let submitvalue:String
     @State private var isShowingScanner = false
     @State private var scannedCode: String?
+    @State private var isShowingOnetime = false
+    @State private var onetimeCode: String?
 //    @ObservedObject var viewModel = CamViewModel()
     
     var body: some View {
@@ -21,6 +23,9 @@ struct ScannerView: View {
         let channels:[String] = UserDefaults(suiteName: appgroup)?.stringArray(forKey: "channels") ?? [String]()
         if let code = scannedCode {
             NavigationLink("Processing", destination: ProcessingView(theqrcode: code, theamount:submitvalue).navigationBarBackButtonHidden(true), isActive: .constant(true)).hidden()
+        }
+        if let onetimetype = onetimeCode {
+            NavigationLink("One time Code", destination: OneTimeView(onetimecode: onetimetype, request_valeu: submitvalue, qrcode_string: "no qrcode", request_reference: "no reference").navigationBarBackButtonHidden(true), isActive: .constant(true)).hidden()
         }
         ZStack {
             CodeScannerView(codeTypes:[.qr]) { response in
@@ -44,25 +49,38 @@ struct ScannerView: View {
                     .cornerRadius((UIScreen.main.bounds.width - (4*12))/2)
                     .padding(.top)
                 Spacer()
-                HStack {
+                HStack(alignment: .center, spacing: 2) {
                     Spacer()
                     ForEach(0 ..< channels.count, id:\.self) { value in
                         ZStack {
                             Circle()
                                 .fill(Color(red: 1, green: 1, blue: 1, opacity: 0.9))
                                 .frame(
-                                    width: (UIScreen.main.bounds.width - (6*12)) / 6, height: (UIScreen.main.bounds.width - (6*12)) / 6
+                                    width: (UIScreen.main.bounds.width - (6*12)) / 7, height: (UIScreen.main.bounds.width - (6*12)) / 7
                                 )
-                            Image(channels[value])
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                                .scaledToFit()
-                                .frame(
-                                    width: (UIScreen.main.bounds.width - (6*12)) / 6 * 0.5 , height: (UIScreen.main.bounds.width - (6*12)) / 6 * 0.5
-                                )
+                            Button(action: {
+                                print("button press \(channels[value])")
+                                onetimeCode = channels[value]
+                                isShowingOnetime = true
+//                                NavigationLink {
+//                                    OneTimeView()
+//                                } label: {
+//                                    Text("\(channels[value])")
+//                                }
+                                
+                            }) {
+                                Image(channels[value])
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .scaledToFit()
+                                    .frame(
+                                        width: (UIScreen.main.bounds.width - (6*12)) / 6 * 0.5 , height: (UIScreen.main.bounds.width - (6*12)) / 6 * 0.5
+                                    )
+                            }
                         }
                         .padding(.trailing, 10)
                     }
+                    Spacer()
                 }
                 .padding(.bottom)
             })

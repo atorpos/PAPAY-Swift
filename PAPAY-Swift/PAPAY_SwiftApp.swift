@@ -18,7 +18,6 @@ struct PAPAY_SwiftApp: App {
     
     @StateObject var viewRouter = ViewRouter()
 
-
     var body: some Scene {
         WindowGroup {
 
@@ -39,6 +38,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     let appgroup:String = "group.com.paymentasia.papayswift"
     
     static var orientationLock = UIInterfaceOrientationMask.all
+    var timer = Timer()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
@@ -54,6 +54,17 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 //            syncdefaults.set(UserDefaults.standard.string(forKey:"token"), forKey: "token")
 //            syncdefaults.synchronize()
 //        }
+        var run_time:Int = 0
+        self.timer = Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true, block: {_ in
+//            print(UserDefaults(suiteName: appgroup)!.string(forKey: "token"))
+//            let appgroup:String = "group.com.paymentasia.papayswift"
+//            let connect_model = PapayInfo()
+//            let connect_str = connect_model.infopapay_str()
+//            let responsedata = Data(connect_str.utf8)
+//            var responsecode: Int = 400
+            run_time += 1
+            print("loop run \(run_time)")
+        })
         
         
         if #available(iOS 10.0, *) {
@@ -67,6 +78,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
             application.registerUserNotificationSettings(settings)
         }
         application.registerForRemoteNotifications()
+        
         return true
     }
     
@@ -102,6 +114,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         print("entered background")
     }
+
     func application(_ application: UIApplication, performFetchWithCompletionHandler compleionHandler: @escaping(UIBackgroundFetchResult) -> Void) {
         let painfo = PapayInfo()
         let return_value: String = painfo.infopapay()
