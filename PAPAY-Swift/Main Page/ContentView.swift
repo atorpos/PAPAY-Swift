@@ -8,6 +8,7 @@
 import SwiftUI
 import CoreData
 import CoreImage.CIFilterBuiltins
+import ActivityKit
 
 struct ContentView: View {
     
@@ -37,12 +38,6 @@ struct ContentView: View {
                     } else {
                         HomeView()
                     }
-                    
-//                    Image(uiImage: generateQRCode(from: _model.getinfo()))
-//                        .resizable()
-//                        .scaledToFit()
-//                        .aspectRatio(contentMode: .fit)
-//                        .frame(width: 50, height: 50)
                 case.reports:
                     FirstView()
                 case .transactions:
@@ -52,10 +47,10 @@ struct ContentView: View {
                 }
                 Spacer()
                 ZStack {
-                    if showPopUp {
-                        PlusMenu(widthAndHeight: geometry.size.width/7)
-                            .offset(y: -geometry.size.height/6)
-                    }
+//                    if showPopUp {
+//                        PlusMenu(widthAndHeight: geometry.size.width/7)
+//                            .offset(y: -geometry.size.height/6)
+//                    }
                     HStack{
                         TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: geometry.size.width/5, height: geometry.size.height/28, systemIconName: "house.fill", tabName: "Home")
                         TabBarIcon(viewRouter: viewRouter, assignedPage: .reports, width: geometry.size.width/5, height: geometry.size.height/28, systemIconName: "newspaper.fill", tabName: "Report")
@@ -82,10 +77,16 @@ struct ContentView: View {
                         }
                         
                         TabBarIcon(viewRouter: viewRouter, assignedPage: .transactions, width: geometry.size.width/5, height: geometry.size.height/28, systemIconName: "wallet.pass.fill", tabName: "Transactions")
+                            
                         TabBarIcon(viewRouter: viewRouter, assignedPage: .settings, width: geometry.size.width/5, height: geometry.size.height/28, systemIconName: "gearshape.fill", tabName: "Settings")
+                            .accentColor(.yellow)
                     }
                         .frame(width: geometry.size.width, height: geometry.size.height/8)
-                    .background(Color("TabBarBackground").shadow(radius: 2))
+//                    .background(Color("TabBarBackground").shadow(radius: 2))
+                        .background(Color(UIColor(red: 0.23, green: 0.4, blue: 0.63, alpha: 1)).shadow(radius: 2))
+                }
+                .popover(isPresented: $showPopUp) {
+                    PaymentView()
                 }
             }
                 .edgesIgnoringSafeArea(.bottom)
@@ -214,8 +215,10 @@ struct TabBarIcon: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: width, height: height)
                 .padding(.top, 10)
+                .foregroundColor(.white)
             Text(tabName)
                 .font(.footnote)
+                .foregroundColor(.white)
             Spacer()
         }
             .padding(.horizontal, -4)

@@ -47,6 +47,32 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
                 center: location.coordinate,
                 span: MKCoordinateSpan(latitudeDelta: 0.02, longitudeDelta: 0.02)
             )
+            UserDefaults.standard.set(location.coordinate.longitude, forKey: "longitude")
+            UserDefaults.standard.set(location.coordinate.latitude, forKey: "latitude")
+            
+//            var geocode = CLGeocoder()
+//            
+//            geocode.reverseGeocodeLocation(location, completionHandler: {(placemarks, error)->Void in
+//                var placemark:CLPlacemark!
+//                
+//                if error == nil && placemarks!.count > 0 {
+//                    placemark = placemarks![0] as CLPlacemark
+//                    
+//                    var addressString : String = ""
+//                    if placemark.isoCountryCode == "US" {
+//                        if placemark.country != nil {
+//                            addressString = placemark.country!
+//                        }
+//                        if placemark.subAdministrativeArea != nil {
+//                            addressString = addressString + placemark.subAdministrativeArea! + ", "
+//                        }
+//                        
+//                    }
+//                    print("address \(addressString)")
+//                }
+//                
+//            })
+//            print(location.coordinate.longitude)
         }
 //        location = locations.first?.coordinate
     }
@@ -61,4 +87,5 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         authorizationStatus = manager.authorizationStatus
     }
+    
 }

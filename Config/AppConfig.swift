@@ -19,4 +19,5 @@ struct PAPAYConfig {
     let onetime_ep              =   "/papay/one-time-qrcode"
     let promo_ep                =   "https://merchant.pa-sys.com/papay/promotion/"
     let heartbeat_ep            =   "/papay/heartbeat"
+    let terminal_report_ep      =   "/papay/terminal-report"
 }

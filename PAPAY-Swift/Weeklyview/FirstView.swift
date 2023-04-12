@@ -81,6 +81,9 @@ struct FirstView: View {
                         }
                     }
                 }
+        } .onAppear{
+            let run_report_model = terminal_report()
+            run_report_model.get_report()
         }
         .alert("Important message", isPresented: $showingAlert) {
             Button("OK", role: .cancel){ }

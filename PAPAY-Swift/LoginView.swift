@@ -50,6 +50,7 @@ struct LoginView: View {
                             Text("Login")
                                 .foregroundColor(.white)
                                 .font(.headline)
+                                .colorScheme(.dark)
                             Spacer()
                         }
                     }

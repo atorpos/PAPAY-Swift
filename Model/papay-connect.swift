@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+//import CoreLocation
 //import Combine
 //import transactions
 
@@ -418,5 +419,79 @@ class Direct_esponse{
 //
 //        let ds_response: DS_response = try! decoder.decode(DS_response.self, from: direct_token.data(using: .utf8)!)
 //        print(ds_response.response)
+    }
+}
+
+class GetCallback {
+    
+    var direct_token:String = ""
+    
+    func get_response(show_loop:Int){
+        
+//        print("check \(show_loop) and \(String(describing: UserDefaults.standard.string(forKey: "token")))")
+        let token = UserDefaults.standard.string(forKey: "token")
+//        print(token!)
+        guard let url = URL(string: "https://gateway.pa-sys.com/papay/heartbeat"),
+//              let payload = "{}".data(using: .utf8) else
+              let payload = "token=\(token!)".data(using: .utf8) else
+        {
+            return
+        }
+        
+        let record_long = (UserDefaults.standard.object(forKey: "longitude") ?? 0.00)
+        let record_lang = (UserDefaults.standard.object(forKey: "latitude") ?? 0.00)
+        
+        let device_id = UIDevice.current.identifierForVendor!.uuidString
+        let current_time = Int(NSDate().timeIntervalSince1970)
+        let heardbeatbata = "{\"app_version\": \"1.0.1\", \"serial_number\": \"\(device_id)\", \"heartbeat\":[{\"page\":\"background.task\",\"action_time\": \(current_time),\"longitude\":\"\(record_long)\",\"latitude\":\"\(record_lang)\"}]}"
+        
+        let submitpayload = "token=\(token!)&data=\(heardbeatbata)"
+        print(submitpayload)
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+//        request.addValue("TESTING", forHTTPHeaderField: "x-api-key")
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpBody = submitpayload.data(using: .utf8)
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard error == nil else {print(error!.localizedDescription); return}
+            guard let data = data else { print("Empty data"); return}
+            
+            if let str = String(data: data, encoding: .utf8) {
+                print(str)
+            }
+        }.resume()
+    }
+    
+}
+
+class terminal_report {
+    
+    var terminal_token:String = ""
+    
+    func get_report() {
+        let token = UserDefaults.standard.string(forKey: "token")
+        
+        guard let url = URL(string: "\(PAPAYConfig().production_url)\(PAPAYConfig().terminal_report_ep)"), let payload = "token=\(token!)".data(using: .utf8) else {
+            return
+        }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpBody = payload
+        
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            guard error == nil else {print(error!.localizedDescription); return}
+            guard let data = data else { print("Empty data"); return}
+            
+            if let str = String(data: data, encoding: .utf8) {
+                print(str)
+            }
+        }.resume()
+                
+    }
+    
+    func get_response() {
+        
     }
 }

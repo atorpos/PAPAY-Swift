@@ -7,7 +7,7 @@
 
 import SwiftUI
 import AVFoundation
-import ExytePopupView
+//import ExytePopupView
 import CoreLocation
 
 class login_status: ObservableObject {
@@ -54,6 +54,7 @@ struct HomeView: View {
     init() {
         
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.darkGray]
+        foregroundColor(Color(red: 0.94, green: 0.94, blue: 0.94))
     }
     
     var body: some View {
@@ -80,13 +81,14 @@ struct HomeView: View {
                                 loggedin = checkiflogin()
                                 locationManager.requestLocation()
                             }
-                        if let location = locationManager.location {
-                            Text("Your Location: \(location.latitude), \(location.longitude)")
-                                .font(.system(size: 12)
-                                    .weight(.light))
-                                .frame(maxWidth: .infinity, alignment: .center)
-                                .foregroundColor(.white)
-                        }
+//                        if let location = locationManager.location {
+//                            
+//                            Text("Your Location: \(location.latitude), \(location.longitude)")
+//                                .font(.system(size: 12)
+//                                    .weight(.light))
+//                                .frame(maxWidth: .infinity, alignment: .center)
+//                                .foregroundColor(.white)
+//                        }
                         Text("Terminal: \(tid_id)")
                             .font(.system(size: 14)
                                 .weight(.light))
@@ -110,16 +112,18 @@ struct HomeView: View {
                     HStack(){
                         Text("Total Amount")
                             .font(.system(size: 18, weight: .ultraLight, design: .rounded))
+                            .foregroundColor(Color(red: 0.22, green: 0.40, blue: 0.63))
                         Spacer()
                     }
                     HStack(alignment: .center, spacing: 10){
                         Spacer()
                         Text(String(format: "HKD $%.2f", tid_balance))
                             .font(.system(size: 48, weight: .ultraLight, design: .rounded))
-                            .foregroundColor(Color(red: 0.2, green: 0.2, blue: 0.2))
+                            .foregroundColor(Color(red: 0.22, green: 0.40, blue: 0.63))
                         Spacer()
                     }
                 }
+                
                 .padding()
                bottomView()
             }
@@ -273,9 +277,9 @@ struct bottomView: View {
             }
         }
         
-        .popup(isPresented: $showqrwindow, type: .default, closeOnTap: true, backgroundColor: .white.opacity(1)) {
-            PopupMiddle(isPresented: $showqrwindow)
-        }
+//        .popup(isPresented: $showqrwindow, type: .default, closeOnTap: true, backgroundColor: .white.opacity(1)) {
+//            PopupMiddle(isPresented: $showqrwindow)
+//        }
     }
     
     private func generateQRCode(from string: String) -> UIImage {

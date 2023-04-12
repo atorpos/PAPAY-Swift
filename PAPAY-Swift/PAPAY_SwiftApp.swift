@@ -13,6 +13,12 @@ import UserNotifications
 
 @main
 struct PAPAY_SwiftApp: App {
+    init() {
+        let appearance = UITabBarAppearance()
+        appearance.backgroundColor = UIColor(red: 0.23, green: 0.40, blue: 0.63, alpha: 1)
+        UITabBar.appearance().standardAppearance = appearance
+    }
+    
     let persistenceController = PersistenceController.shared
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
@@ -54,8 +60,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 //            syncdefaults.set(UserDefaults.standard.string(forKey:"token"), forKey: "token")
 //            syncdefaults.synchronize()
 //        }
+        
+        
         var run_time:Int = 0
-        self.timer = Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true, block: {_ in
+        self.timer = Timer.scheduledTimer(withTimeInterval: 60.0, repeats: true, block: {_ in
 //            print(UserDefaults(suiteName: appgroup)!.string(forKey: "token"))
 //            let appgroup:String = "group.com.paymentasia.papayswift"
 //            let connect_model = PapayInfo()
@@ -64,6 +72,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 //            var responsecode: Int = 400
             run_time += 1
             print("loop run \(run_time)")
+            let soundcheck = GetCallback()
+            soundcheck.get_response(show_loop: run_time)
         })
         
         
@@ -158,8 +168,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         }
 //        let messageijson = userInfo["aps"](using: .utf8)!
 //        let json = try? JSONSerialization.jsonObject(with: messageijson, options: []) as? NSDictionary
-        print("user info \(String(describing: title)) and \(body)")
-        print("aps \(aps)")
+        print("user info \(String(describing: title)) and \(body ?? "")")
+        print("aps \(String(describing: aps))")
         
         completionHandler([[.banner, .badge, .sound]])
     }

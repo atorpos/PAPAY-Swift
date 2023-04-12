@@ -14,6 +14,7 @@
 	<key>com.apple.security.application-groups</key>
 	<array>
 		<string>group.com.paymentasia.papayswift</string>
+		<string>group.com.paymentasia.papay</string>
 	</array>
 </dict>
 </plist>

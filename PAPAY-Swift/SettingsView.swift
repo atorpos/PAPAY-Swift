@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    let thewordings = ["Help", "FAQ", "Term of Services", "Information Collection Statement", "About", "Merchant Portal", "App Settings"]
+    let thewordings = ["About","Merchant Portal", "App Settings", "Help", "FAQ", "Term of Services", "Information Collection Statement"]
     var body: some View {
         NavigationView {
             List(thewordings, id: \.self) { theword in
